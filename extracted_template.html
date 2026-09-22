@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="b852e368-7854-49bc-b6e7-5e5e3db5e472"></script>
+</head>
+<body>
+
+<x-dc>
+
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>/* vietnamese */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("fd759127-3ef5-4087-a4ec-051853bfeba5") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("b0ff0b50-4610-4b26-ad18-78ec17257d18") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("6258de14-69fa-4550-9594-64ca2afd8aff") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("fd759127-3ef5-4087-a4ec-051853bfeba5") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("b0ff0b50-4610-4b26-ad18-78ec17257d18") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("6258de14-69fa-4550-9594-64ca2afd8aff") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("fd759127-3ef5-4087-a4ec-051853bfeba5") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("b0ff0b50-4610-4b26-ad18-78ec17257d18") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("6258de14-69fa-4550-9594-64ca2afd8aff") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("fd759127-3ef5-4087-a4ec-051853bfeba5") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("b0ff0b50-4610-4b26-ad18-78ec17257d18") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("6258de14-69fa-4550-9594-64ca2afd8aff") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 800;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("fd759127-3ef5-4087-a4ec-051853bfeba5") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 800;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("b0ff0b50-4610-4b26-ad18-78ec17257d18") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 800;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("6258de14-69fa-4550-9594-64ca2afd8aff") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+  body{margin:0;background:#FFFFFF;font-family:'Archivo',sans-serif;-webkit-font-smoothing:antialiased;color:#16181C}
+  *{box-sizing:border-box}
+  a{color:#2452F0;transition:color 180ms cubic-bezier(.23,1,.32,1)}
+  a:hover{color:#1B3EC2}
+  ::selection{background:#E4EAFD}
+  input:focus,select:focus,button:focus,a:focus{outline:2px solid #2452F0;outline-offset:2px}
+  @keyframes riseIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+  @media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+  }
+</style>
+</helmet>
+
+<div style="max-width:100%;overflow-x:hidden">
+
+  <nav style="position:sticky;top:0;z-index:40;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid #E9EAED;display:flex;align-items:center;justify-content:space-between;padding:16px clamp(20px,5vw,56px);gap:16px">
+    <a href="#" sc-camel-on-click="{{ goHome }}" style="font-weight:800;font-size:18px;text-decoration:none;color:#16181C;letter-spacing:-.03em">Talent833</a>
+    <div style="display:flex;align-items:center;gap:clamp(12px,3vw,28px)">
+      <a href="#" sc-camel-on-click="{{ goService }}" style="font-size:14px;font-weight:500;text-decoration:none;color:#4B4F58" style-hover="color:#16181C">Executive Search</a>
+      <button sc-camel-on-click="{{ startSearchExec }}" style="background:#16181C;color:#fff;border:none;border-radius:6px;padding:11px 18px;font-size:14px;font-weight:600;font-family:inherit;cursor:pointer;white-space:nowrap;min-height:44px;transition:transform 160ms cubic-bezier(.23,1,.32,1),background 180ms cubic-bezier(.23,1,.32,1)" style-hover="background:#2E323A" style-active="transform:scale(0.97)">Start your search</button>
+    </div>
+  </nav>
+
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <main data-screen-label="Homepage">
+
+    <section style="padding:clamp(56px,9vw,104px) clamp(20px,5vw,56px) clamp(40px,6vw,64px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(36px,5vw,64px);align-items:center">
+      <div>
+        <div style="display:inline-flex;align-items:center;font-size:13px;font-weight:600;color:#2452F0;background:#EEF1FE;border-radius:6px;padding:6px 12px;margin-bottom:22px;animation:riseIn 400ms cubic-bezier(.23,1,.32,1) both">Roles from ₹12L CTC</div>
+        <h1 style="font-weight:800;font-size:clamp(38px,7vw,68px);line-height:1.02;margin:0 0 20px;letter-spacing:-.04em;text-wrap:balance;animation:riseIn 400ms cubic-bezier(.23,1,.32,1) 60ms both">Executive hiring, systemized.</h1>
+        <p style="font-size:clamp(17px,2vw,19px);line-height:1.55;color:#4B4F58;max-width:46ch;margin:0 0 30px;animation:riseIn 400ms cubic-bezier(.23,1,.32,1) 120ms both">Structured search for senior and leadership roles. Mapped candidates, scored shortlists, one dashboard.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;animation:riseIn 400ms cubic-bezier(.23,1,.32,1) 180ms both">
+          <button sc-camel-on-click="{{ startSearchExec }}" style="background:#2452F0;color:#fff;border:none;border-radius:6px;padding:15px 28px;font-size:15.5px;font-weight:600;font-family:inherit;cursor:pointer;min-height:44px;transition:transform 160ms cubic-bezier(.23,1,.32,1),background 180ms cubic-bezier(.23,1,.32,1)" style-hover="background:#1B3EC2" style-active="transform:scale(0.97)">Start your search</button>
+          <button sc-camel-on-click="{{ goService }}" style="background:#fff;color:#16181C;border:1px solid #D8DAE0;border-radius:6px;padding:15px 24px;font-size:15.5px;font-weight:600;font-family:inherit;cursor:pointer;min-height:44px;transition:transform 160ms cubic-bezier(.23,1,.32,1),border-color 180ms cubic-bezier(.23,1,.32,1)" style-hover="border-color:#9CA0A8" style-active="transform:scale(0.97)">How it works</button>
+        </div>
+      </div>
+
+      <div style="border:1px solid #E9EAED;border-radius:12px;background:#fff;overflow:hidden;box-shadow:0 20px 48px rgba(22,24,28,.08);animation:riseIn 500ms cubic-bezier(.23,1,.32,1) 240ms both">
+        <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid #E9EAED;background:#FBFBFC">
+          <div style="display:flex;gap:5px">
+            <span style="width:9px;height:9px;border-radius:50%;background:#E1E3E8;display:block"></span>
+            <span style="width:9px;height:9px;border-radius:50%;background:#E1E3E8;display:block"></span>
+            <span style="width:9px;height:9px;border-radius:50%;background:#E1E3E8;display:block"></span>
+          </div>
+          <div style="font-size:12px;font-weight:600;color:#5F636B">Active search — VP Finance</div>
+        </div>
+        <div style="display:flex">
+          <div style="width:46px;border-right:1px solid #E9EAED;padding:14px 0;display:flex;flex-direction:column;align-items:center;gap:12px;background:#FBFBFC">
+            <span style="width:20px;height:20px;border-radius:5px;background:#2452F0;display:block"></span>
+            <span style="width:20px;height:20px;border-radius:5px;background:#E1E3E8;display:block"></span>
+            <span style="width:20px;height:20px;border-radius:5px;background:#E1E3E8;display:block"></span>
+            <span style="width:20px;height:20px;border-radius:5px;background:#E1E3E8;display:block"></span>
+          </div>
+          <div style="flex:1;padding:16px;min-width:0">
+            <div style="display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap">
+              <sc-for list="{{ mockFilters }}" as="f" hint-placeholder-count="3">
+                <span style="font-size:11.5px;font-weight:600;padding:5px 10px;border-radius:5px;background:{{ f.bg }};color:{{ f.fg }}">{{ f.label }}</span>
+              </sc-for>
+            </div>
+            <sc-for list="{{ mockCandidates }}" as="c" hint-placeholder-count="4">
+              <div style="display:flex;align-items:center;gap:10px;padding:11px 0;border-bottom:1px solid #F1F2F4">
+                <span style="width:28px;height:28px;border-radius:50%;background:#2452F0;color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex:none">{{ c.initials }}</span>
+                <span style="flex:1;min-width:0">
+                  <span style="display:block;font-size:12.5px;font-weight:600;color:#16181C">{{ c.name }}</span>
+                  <span style="display:block;font-size:11.5px;color:#5F636B">{{ c.meta }}</span>
+                </span>
+                <span style="font-size:11.5px;font-weight:700;padding:4px 9px;border-radius:5px;background:{{ c.scoreBg }};color:{{ c.scoreFg }};flex:none">{{ c.score }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding:clamp(48px,7vw,80px) clamp(20px,5vw,56px)">
+      <h2 style="font-weight:700;font-size:clamp(24px,2.8vw,30px);margin:0 0 10px;letter-spacing:-.025em">How it runs</h2>
+      <p style="font-size:15.5px;color:#5F636B;margin:0 0 32px;max-width:48ch">Four stages, same structure every time.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:#fff;border:1px solid #E9EAED;border-radius:12px;overflow:hidden">
+        <sc-for list="{{ howItWorks }}" as="step" hint-placeholder-count="4">
+          <div style="padding:26px 22px;background:#fff;box-shadow:0 0 0 1px #E9EAED;transition:background 200ms cubic-bezier(.23,1,.32,1)" style-hover="background:#FBFBFC">
+            <h3 style="font-size:16px;font-weight:700;margin:0 0 8px;letter-spacing:-.01em">{{ step.title }}</h3>
+            <p style="font-size:14px;line-height:1.6;color:#4B4F58;margin:0">{{ step.desc }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="padding:clamp(44px,6vw,64px) clamp(20px,5vw,56px);background:#16181C">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:clamp(24px,4vw,44px)">
+        <sc-for list="{{ numbers }}" as="stat" hint-placeholder-count="4">
+          <div>
+            <div style="font-weight:800;font-size:clamp(30px,3.6vw,42px);color:#fff;margin-bottom:6px;letter-spacing:-.03em">{{ stat.value }}</div>
+            <div style="font-size:13.5px;color:#9CA0A8;line-height:1.4">{{ stat.label }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="padding:clamp(48px,7vw,80px) clamp(20px,5vw,56px)">
+      <h2 style="font-weight:700;font-size:clamp(24px,2.8vw,30px);margin:0 0 32px;letter-spacing:-.025em">Two ways we help</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
+        <div style="background:#2452F0;color:#fff;border-radius:12px;padding:clamp(28px,4vw,44px);display:flex;flex-direction:column;justify-content:space-between;min-height:240px">
+          <div>
+            <div style="font-size:13px;font-weight:600;color:#DDE4FD;margin-bottom:16px">Primary service</div>
+            <h3 style="font-size:clamp(22px,2.8vw,28px);font-weight:800;margin:0 0 10px;letter-spacing:-.025em">Executive Search</h3>
+            <p style="font-size:15px;line-height:1.55;color:#DDE4FD;margin:0;max-width:40ch">Leadership and senior specialist hiring, ₹12L+ CTC. Mapped, scored, guaranteed.</p>
+          </div>
+          <a href="#" sc-camel-on-click="{{ goService }}" style="color:#fff;font-weight:600;font-size:14.5px;text-decoration:none;margin-top:24px;border-bottom:1px solid rgba(255,255,255,.45);padding-bottom:2px;align-self:flex-start" style-hover="border-bottom-color:#fff">See how it works</a>
+        </div>
+        <div style="background:#F7F8FA;border:1px solid #E9EAED;border-radius:12px;padding:clamp(24px,4vw,36px);display:flex;flex-direction:column;justify-content:space-between">
+          <div>
+            <div style="font-size:13px;font-weight:600;color:#5F636B;margin-bottom:16px">Also available</div>
+            <h3 style="font-size:19px;font-weight:800;margin:0 0 10px;letter-spacing:-.02em">L&amp;D Solutions</h3>
+            <p style="font-size:14.5px;line-height:1.55;color:#4B4F58;margin:0">Leadership development for teams already in place.</p>
+          </div>
+          <a href="#" sc-camel-on-click="{{ startSearchLD }}" style="color:#2452F0;font-weight:600;font-size:14.5px;text-decoration:none;margin-top:20px;border-bottom:1px solid rgba(36,82,240,.35);padding-bottom:2px;align-self:flex-start" style-hover="border-bottom-color:#2452F0">Learn more</a>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding:clamp(48px,7vw,80px) 0">
+      <h2 style="font-weight:700;font-size:clamp(24px,2.8vw,30px);margin:0 0 24px;padding:0 clamp(20px,5vw,56px);letter-spacing:-.025em">Recent searches</h2>
+      <div style="display:flex;gap:14px;padding:0 clamp(20px,5vw,56px);overflow-x:auto">
+        <sc-for list="{{ caseStudies }}" as="cs" hint-placeholder-count="3">
+          <div style="flex:none;width:250px;border:1px solid #E9EAED;border-radius:12px;padding:22px;background:#F7F8FA">
+            <div style="font-size:12.5px;font-weight:600;color:#2452F0;margin-bottom:12px">{{ cs.industry }}</div>
+            <div style="font-size:17px;font-weight:700;margin-bottom:8px;letter-spacing:-.015em">{{ cs.role }}</div>
+            <div style="display:flex;gap:16px;font-size:13.5px;color:#5F636B">
+              <span>{{ cs.ctc }}</span>
+              <span>{{ cs.time }}</span>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="padding:clamp(56px,8vw,96px) clamp(20px,5vw,56px);text-align:center;border-top:1px solid #E9EAED;background:#F7F8FA">
+      <h2 style="font-weight:800;font-size:clamp(26px,3.6vw,36px);margin:0 0 14px;letter-spacing:-.03em;text-wrap:balance">Ready to fill your next senior role?</h2>
+      <p style="font-size:16px;color:#4B4F58;margin:0 0 28px">Three minutes to a qualified intake.</p>
+      <button sc-camel-on-click="{{ startSearchExec }}" style="background:#2452F0;color:#fff;border:none;border-radius:6px;padding:16px 32px;font-size:16px;font-weight:600;font-family:inherit;cursor:pointer;min-height:44px;transition:transform 160ms cubic-bezier(.23,1,.32,1),background 180ms cubic-bezier(.23,1,.32,1)" style-hover="background:#1B3EC2" style-active="transform:scale(0.97)">Start your search</button>
+    </section>
+
+    <footer style="padding:30px clamp(20px,5vw,56px);border-top:1px solid #E9EAED;display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;font-size:13px;color:#5F636B">
+      <div>© 2026 Talent833 Partners</div>
+      <div style="display:flex;gap:18px">
+        <a href="#" sc-camel-on-click="{{ goHome }}" style="color:#5F636B;text-decoration:none" style-hover="color:#16181C">Home</a>
+        <a href="#" sc-camel-on-click="{{ goService }}" style="color:#5F636B;text-decoration:none" style-hover="color:#16181C">Executive Search</a>
+      </div>
+    </footer>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isService }}" hint-placeholder-val="{{ false }}">
+  <main data-screen-label="Service Detail — Executive Search">
+
+    <section style="padding:clamp(40px,7vw,88px) clamp(20px,5vw,56px) clamp(32px,5vw,48px);max-width:800px">
+      <a href="#" sc-camel-on-click="{{ goHome }}" style="font-size:13.5px;color:#5F636B;text-decoration:none" style-hover="color:#16181C">← Back</a>
+      <h1 style="font-weight:800;font-size:clamp(34px,6vw,56px);line-height:1.05;margin:26px 0 18px;letter-spacing:-.04em;animation:riseIn 400ms cubic-bezier(.23,1,.32,1) both">Senior hires.<br>Done in 21 days.</h1>
+      <p style="font-size:clamp(16.5px,2vw,19px);line-height:1.55;color:#4B4F58;max-width:50ch;margin:0 0 28px;animation:riseIn 400ms cubic-bezier(.23,1,.32,1) 60ms both">A structured process for roles above ₹12 lakh CTC — mapped candidates, scored shortlists, offer support.</p>
+      <button sc-camel-on-click="{{ startSearchExec }}" style="background:#2452F0;color:#fff;border:none;border-radius:6px;padding:15px 28px;font-size:15.5px;font-weight:600;font-family:inherit;cursor:pointer;min-height:44px;animation:riseIn 400ms cubic-bezier(.23,1,.32,1) 120ms both;transition:transform 160ms cubic-bezier(.23,1,.32,1),background 180ms cubic-bezier(.23,1,.32,1)" style-hover="background:#1B3EC2" style-active="transform:scale(0.97)">Start your search</button>
+    </section>
+
+    <section style="padding:0 clamp(20px,5vw,56px) clamp(40px,6vw,72px);max-width:900px">
+      <div style="border:1px solid #E9EAED;border-radius:12px;background:#fff;overflow:hidden;box-shadow:0 20px 48px rgba(22,24,28,.06)">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 22px;border-bottom:1px solid #E9EAED;background:#FBFBFC;flex-wrap:wrap">
+          <div style="display:flex;align-items:center;gap:12px">
+            <span style="width:36px;height:36px;border-radius:50%;background:#2452F0;color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center">RK</span>
+            <span>
+              <span style="display:block;font-size:14.5px;font-weight:700">Candidate A-3821</span>
+              <span style="display:block;font-size:12.5px;color:#5F636B">VP Finance, 14 yrs, Mumbai</span>
+            </span>
+          </div>
+          <span style="font-size:13px;font-weight:700;padding:6px 14px;border-radius:6px;background:#E8F6EF;color:#0A6343">Score 86 / 100</span>
+        </div>
+        <div style="padding:22px">
+          <div style="font-size:12.5px;font-weight:600;color:#5F636B;margin-bottom:16px">Competency benchmark</div>
+          <sc-for list="{{ mockScores }}" as="s" hint-placeholder-count="5">
+            <div style="display:flex;align-items:center;gap:14px;margin-bottom:13px">
+              <span style="width:145px;font-size:13px;color:#4B4F58;flex:none">{{ s.label }}</span>
+              <span style="flex:1;height:7px;border-radius:4px;background:#F1F2F4;display:block;position:relative;min-width:60px">
+                <span style="position:absolute;left:0;top:0;bottom:0;width:{{ s.pct }};border-radius:4px;background:#2452F0;display:block;transition:width 500ms cubic-bezier(.23,1,.32,1)"></span>
+              </span>
+              <span style="font-size:12.5px;font-weight:700;color:#16181C;width:28px;text-align:right;flex:none">{{ s.value }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding:clamp(40px,6vw,64px) clamp(20px,5vw,56px)">
+      <h2 style="font-weight:700;font-size:clamp(22px,2.6vw,28px);margin:0 0 28px;letter-spacing:-.025em">What's included</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:#fff;border:1px solid #E9EAED;border-radius:12px;overflow:hidden">
+        <sc-for list="{{ includedItems }}" as="item" hint-placeholder-count="4">
+          <div style="padding:24px 22px;background:#fff;box-shadow:0 0 0 1px #E9EAED">
+            <h3 style="font-size:15.5px;font-weight:700;margin:0 0 8px;letter-spacing:-.01em">{{ item.title }}</h3>
+            <p style="font-size:13.5px;line-height:1.6;color:#4B4F58;margin:0">{{ item.desc }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="padding:clamp(32px,5vw,56px) 0">
+      <h2 style="font-weight:700;font-size:clamp(22px,2.6vw,28px);margin:0 0 24px;padding:0 clamp(20px,5vw,56px);letter-spacing:-.025em">The process</h2>
+      <div style="display:flex;gap:0;overflow-x:auto;padding:0 clamp(20px,5vw,56px)">
+        <sc-for list="{{ processStages }}" as="stage" hint-placeholder-count="6">
+          <div style="flex:none;width:170px;border-top:3px solid #2452F0;padding:16px 18px 0 0">
+            <div style="font-size:15px;font-weight:700;margin-bottom:4px;letter-spacing:-.01em">{{ stage.title }}</div>
+            <div style="font-size:13px;color:#5F636B;line-height:1.5">{{ stage.desc }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="padding:clamp(40px,6vw,64px) clamp(20px,5vw,56px);background:#F7F8FA">
+      <h2 style="font-weight:700;font-size:clamp(22px,2.6vw,28px);margin:0 0 24px;letter-spacing:-.025em">Recent closes</h2>
+      <div style="overflow-x:auto;background:#fff;border:1px solid #E9EAED;border-radius:12px">
+        <sc-raw-table style="width:100%;border-collapse:collapse;min-width:520px">
+          <sc-raw-thead>
+            <sc-raw-tr style="border-bottom:1px solid #E9EAED">
+              <sc-raw-th style="text-align:left;padding:14px 20px;font-size:12.5px;color:#5F636B;font-weight:600">Role</sc-raw-th>
+              <sc-raw-th style="text-align:left;padding:14px 20px;font-size:12.5px;color:#5F636B;font-weight:600">Industry</sc-raw-th>
+              <sc-raw-th style="text-align:left;padding:14px 20px;font-size:12.5px;color:#5F636B;font-weight:600">CTC</sc-raw-th>
+              <sc-raw-th style="text-align:left;padding:14px 20px;font-size:12.5px;color:#5F636B;font-weight:600">Time to close</sc-raw-th>
+            </sc-raw-tr>
+          </sc-raw-thead>
+          <sc-raw-tbody>
+            <sc-for list="{{ caseStudies }}" as="cs" hint-placeholder-count="3">
+              <sc-raw-tr style="border-bottom:1px solid #F1F2F4">
+                <sc-raw-td style="padding:14px 20px;font-size:14.5px;font-weight:700">{{ cs.role }}</sc-raw-td>
+                <sc-raw-td style="padding:14px 20px;font-size:14.5px;color:#4B4F58">{{ cs.industry }}</sc-raw-td>
+                <sc-raw-td style="padding:14px 20px;font-size:14.5px;color:#4B4F58">{{ cs.ctc }}</sc-raw-td>
+                <sc-raw-td style="padding:14px 20px;font-size:14.5px;color:#4B4F58">{{ cs.time }}</sc-raw-td>
+              </sc-raw-tr>
+            </sc-for>
+          </sc-raw-tbody>
+        </sc-raw-table>
+      </div>
+    </section>
+
+    <section style="padding:clamp(40px,6vw,64px) clamp(20px,5vw,56px);max-width:740px">
+      <h2 style="font-weight:700;font-size:clamp(22px,2.6vw,28px);margin:0 0 20px;letter-spacing:-.025em">Common questions</h2>
+      <sc-for list="{{ faqs }}" as="faq" hint-placeholder-count="5">
+        <div style="border-bottom:1px solid #E9EAED">
+          <button sc-camel-on-click="{{ faq.onToggle }}" style="width:100%;text-align:left;background:none;border:none;padding:18px 0;display:flex;justify-content:space-between;align-items:center;gap:14px;cursor:pointer;font-family:inherit;min-height:44px;transition:opacity 180ms cubic-bezier(.23,1,.32,1)" style-hover="opacity:.72">
+            <span style="font-size:15px;font-weight:700;color:#16181C;letter-spacing:-.01em">{{ faq.q }}</span>
+            <span style="font-size:17px;color:#5F636B;flex:none;width:24px;text-align:center">{{ faq.symbol }}</span>
+          </button>
+          <sc-if value="{{ faq.open }}" hint-placeholder-val="{{ false }}">
+            <p style="margin:0 0 18px;font-size:14.5px;line-height:1.65;color:#4B4F58;max-width:60ch">{{ faq.a }}</p>
+          </sc-if>
+        </div>
+      </sc-for>
+    </section>
+
+    <section style="padding:clamp(48px,7vw,80px) clamp(20px,5vw,56px);text-align:center;background:#16181C;color:#fff">
+      <h2 style="font-weight:800;font-size:clamp(24px,3.2vw,32px);margin:0 0 12px;letter-spacing:-.03em">Tell us who you're hiring for</h2>
+      <p style="font-size:15.5px;color:#9CA0A8;margin:0 0 26px">A short intake — three minutes.</p>
+      <button sc-camel-on-click="{{ startSearchExec }}" style="background:#fff;color:#16181C;border:none;border-radius:6px;padding:16px 32px;font-size:16px;font-weight:600;font-family:inherit;cursor:pointer;min-height:44px;transition:transform 160ms cubic-bezier(.23,1,.32,1),background 180ms cubic-bezier(.23,1,.32,1)" style-hover="background:#E9EAED" style-active="transform:scale(0.97)">Start your search</button>
+    </section>
+
+    <footer style="padding:30px clamp(20px,5vw,56px);border-top:1px solid #E9EAED;display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;font-size:13px;color:#5F636B">
+      <div>© 2026 Talent833 Partners</div>
+      <div style="display:flex;gap:18px">
+        <a href="#" sc-camel-on-click="{{ goHome }}" style="color:#5F636B;text-decoration:none" style-hover="color:#16181C">Home</a>
+        <a href="#" sc-camel-on-click="{{ goService }}" style="color:#5F636B;text-decoration:none" style-hover="color:#16181C">Executive Search</a>
+      </div>
+    </footer>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isForm }}" hint-placeholder-val="{{ false }}">
+  <main data-screen-label="Lead Qualification Form" style="min-height:80vh;background:#F7F8FA;padding:clamp(28px,5vw,48px) clamp(16px,5vw,24px) 72px">
+    <div style="max-width:600px;margin:0 auto">
+      <a href="#" sc-camel-on-click="{{ goHome }}" style="font-size:13.5px;color:#5F636B;text-decoration:none" style-hover="color:#16181C">← Back</a>
+
+      <div style="display:flex;align-items:center;gap:4px;margin:24px 0 8px">
+        <sc-for list="{{ progressDots }}" as="dot" hint-placeholder-count="5">
+          <div style="height:3px;border-radius:2px;flex:1;background:{{ dot.bg }};transition:background 250ms cubic-bezier(.23,1,.32,1)"></div>
+        </sc-for>
+      </div>
+      <div style="font-size:13px;color:#5F636B;margin-bottom:28px;font-weight:500">Step {{ formStep }} of {{ totalSteps }} — {{ stepLabel }}</div>
+
+      <div style="background:#fff;border:1px solid #E9EAED;border-radius:12px;padding:clamp(24px,4vw,36px)">
+
+        <sc-if value="{{ step1 }}" hint-placeholder-val="{{ true }}">
+        <div>
+          <h2 style="font-weight:800;font-size:21px;margin:0 0 22px;letter-spacing:-.025em">What do you need?</h2>
+          <div style="display:grid;gap:10px">
+            <sc-for list="{{ serviceOptions }}" as="opt" hint-placeholder-count="3">
+              <button sc-camel-on-click="{{ opt.onSelect }}" style="{{ opt.cardStyle }}">
+                <div style="font-size:15.5px;font-weight:700;margin-bottom:3px">{{ opt.label }}</div>
+                <div style="font-size:13.5px;color:#5F636B">{{ opt.desc }}</div>
+              </button>
+            </sc-for>
+          </div>
+          <sc-if value="{{ errors.service }}" hint-placeholder-val="{{ false }}"><p style="{{ errStyle }}">{{ errors.service }}</p></sc-if>
+        </div>
+        </sc-if>
+
+        <sc-if value="{{ step2 }}" hint-placeholder-val="{{ false }}">
+        <div>
+          <h2 style="font-weight:800;font-size:21px;margin:0 0 22px;letter-spacing:-.025em">Role details</h2>
+          <div style="display:grid;gap:16px">
+            <div>
+              <label style="{{ labelStyle }}">Designation you're hiring for</label>
+              <input value="{{ formData.designation }}" sc-camel-on-change="{{ handlers.designation }}" placeholder="e.g. VP – Sales" style="{{ inputStyle }}">
+              <sc-if value="{{ errors.designation }}" hint-placeholder-val="{{ false }}"><p style="{{ errStyle }}">{{ errors.designation }}</p></sc-if>
+            </div>
+            <div>
+              <label style="{{ labelStyle }}">Department</label>
+              <input value="{{ formData.department }}" sc-camel-on-change="{{ handlers.department }}" placeholder="e.g. Sales &amp; Marketing" style="{{ inputStyle }}">
+              <sc-if value="{{ errors.department }}" hint-placeholder-val="{{ false }}"><p style="{{ errStyle }}">{{ errors.department }}</p></sc-if>
+            </div>
+            <div>
+              <label style="{{ labelStyle }}">CTC range</label>
+              <sc-raw-select value="{{ formData.ctcRange }}" sc-camel-on-change="{{ handlers.ctcRange }}" style="{{ selectStyle }}">
+                <option value="">Select a range</option>
+                <option value="12-18">₹12L – 18L</option>
+                <option value="18-30">₹18L – 30L</option>
+                <option value="30-50">₹30L – 50L</option>
+                <option value="50+">₹50L+</option>
+              </sc-raw-select>
+              <sc-if value="{{ errors.ctcRange }}" hint-placeholder-val="{{ false }}"><p style="{{ errStyle }}">{{ errors.ctcRange }}</p></sc-if>
+            </div>
+            <div>
+              <label style="{{ labelStyle }}">Number of positions</label>
+              <input type="number" min="1" value="{{ formData.positions }}" sc-camel-on-change="{{ handlers.positions }}" placeholder="1" style="{{ inputStyle }}">
+              <sc-if value="{{ errors.positions }}" hint-placeholder-val="{{ false }}"><p style="{{ errStyle }}">{{ errors.positions }}</p></sc-if>
+            </div>
+            <div>
+              <label style="{{ labelStyle }}">Timeline</label>
+              <sc-raw-select value="{{ formData.timeline }}" sc-camel-on-change="{{ handlers.timeline }}" style="{{ selectStyle }}">
+                <option value="">Select timeline</option>
+                <option value="immediate">Immediate</option>
+                <option value="1month">Within 1 month</option>
+                <option value="3months">Within 3 months</option>
+                <option value="exploratory">Just exploring</option>
+              </sc-raw-select>
+              <sc-if value="{{ errors.timeline }}" hint-placeholder-val="{{ false }}"><p style="{{ errStyle }}">{{ errors.timeline }}</p></sc-if>
+            </div>
+          </div>
+        </div>
+        </sc-if>
+
+        <sc-if value="{{ step3 }}" hint-placeholder-val="{{ false }}">
+        <div>
+          <h2 style="font-weight:800;font-size:21px;margin:0 0 22px;letter-spacing:-.025em">About your company</h2>
+          <div style="display:grid;gap:16px">
+            <div>
+              <label style="{{ labelStyle }}">Company name</label>
+              <input value="{{ formData.companyName }}" sc-camel-on-change="{{ handlers.companyName }}" placeholder="Company Pvt. Ltd." style="{{ inputStyle }}">
+              <sc-if value="{{ errors.companyName }}" hint-placeholder-val="{{ false }}"><p style="{{ errStyle }}">{{ errors.companyName }}</p></sc-if>
+            </div>
+            <div>
+              <label style="{{ labelStyle }}">Industry</label>
+              <sc-raw-select value="{{ formData.industry }}" sc-camel-on-change="{{ handlers.industry }}" style="{{ selectStyle }}">
+                <option value="">Select industry</option>
+                <sc-for list="{{ industries }}" as="ind" hint-placeholder-count="8"><option value="{{ ind }}">{{ ind }}</option></sc-for>
+              </sc-raw-select>
+              <sc-if value="{{ errors.industry }}" hint-placeholder-val="{{ false }}"><p style="{{ errStyle }}">{{ errors.industry }}</p></sc-if>
+            </div>
+            <div>
+              <label style="{{ labelStyle }}">Company size</label>
+              <sc-raw-select value="{{ formData.companySize }}" sc-camel-on-change="{{ handlers.companySize }}" style="{{ selectStyle }}">
+                <option value="">Select size</option>
+                <option value="1-50">1 – 50</option>
+                <option value="51-200">51 – 200</option>
+                <option value="201-1000">201 – 1,000</option>
+                <option value="1000+">1,000+</option>
+              </sc-raw-select>
+              <sc-if value="{{ errors.companySize }}" hint-placeholder-val="{{ false }}"><p style="{{ errStyle }}">{{ errors.companySize }}</p></sc-if>
+            </div>
+            <div>
+              <label style="{{ labelStyle }}">City</label>
+              <input value="{{ formData.city }}" sc-camel-on-change="{{ handlers.city }}" placeholder="e.g. Mumbai" style="{{ inputStyle }}">
+              <sc-if value="{{ errors.city }}" hint-placeholder-val="{{ false }}"><p style="{{ errStyle }}">{{ errors.city }}</p></sc-if>
+            </div>
+          </div>
+        </div>
+        </sc-if>
+
+        <sc-if value="{{ step4 }}" hint-placeholder-val="{{ false }}">
+        <div>
+          <h2 style="font-weight:800;font-size:21px;margin:0 0 22px;letter-spacing:-.025em">Your contact details</h2>
+          <div style="display:grid;gap:16px">
+            <div>
+              <label style="{{ labelStyle }}">Full name</label>
+              <input value="{{ formData.name }}" sc-camel-on-change="{{ handlers.name }}" placeholder="Your name" style="{{ inputStyle }}">
+              <sc-if value="{{ errors.name }}" hint-placeholder-val="{{ false }}"><p style="{{ errStyle }}">{{ errors.name }}</p></sc-if>
+            </div>
+            <div>
+              <label style="{{ labelStyle }}">Phone number</label>
+              <input value="{{ formData.phone }}" sc-camel-on-change="{{ handlers.phone }}" placeholder="10-digit mobile number" style="{{ inputStyle }}">
+              <sc-if value="{{ errors.phone }}" hint-placeholder-val="{{ false }}"><p style="{{ errStyle }}">{{ errors.phone }}</p></sc-if>
+            </div>
+            <div>
+              <label style="{{ labelStyle }}">Email (optional)</label>
+              <input value="{{ formData.email }}" sc-camel-on-change="{{ handlers.email }}" placeholder="you@company.com" style="{{ inputStyle }}">
+              <sc-if value="{{ errors.email }}" hint-placeholder-val="{{ false }}"><p style="{{ errStyle }}">{{ errors.email }}</p></sc-if>
+            </div>
+            <div>
+              <label style="{{ labelStyle }}">Preferred contact method</label>
+              <div style="display:flex;gap:8px">
+                <sc-for list="{{ contactMethods }}" as="cm" hint-placeholder-count="3">
+                  <button sc-camel-on-click="{{ cm.onPick }}" style="{{ cm.style }}">{{ cm.label }}</button>
+                </sc-for>
+              </div>
+              <sc-if value="{{ errors.contactMethod }}" hint-placeholder-val="{{ false }}"><p style="{{ errStyle }}">{{ errors.contactMethod }}</p></sc-if>
+            </div>
+          </div>
+        </div>
+        </sc-if>
+
+        <sc-if value="{{ step5 }}" hint-placeholder-val="{{ false }}">
+        <div>
+          <h2 style="font-weight:800;font-size:21px;margin:0 0 22px;letter-spacing:-.025em">Review &amp; submit</h2>
+          <div style="display:grid;gap:0">
+            <sc-for list="{{ summaryRows }}" as="row" hint-placeholder-count="8">
+              <div style="display:flex;justify-content:space-between;gap:14px;padding:12px 0;border-bottom:1px solid #F1F2F4">
+                <span style="font-size:13.5px;color:#5F636B">{{ row.label }}</span>
+                <span style="font-size:13.5px;font-weight:700;text-align:right">{{ row.value }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        </sc-if>
+
+      </div>
+
+      <div style="display:flex;justify-content:space-between;gap:12px;margin-top:20px">
+        <sc-if value="{{ showBack }}" hint-placeholder-val="{{ false }}">
+          <button sc-camel-on-click="{{ formBack }}" style="background:#fff;border:1px solid #D8DAE0;color:#16181C;border-radius:6px;padding:13px 22px;font-size:14px;font-weight:600;font-family:inherit;cursor:pointer;min-height:44px;transition:transform 160ms cubic-bezier(.23,1,.32,1),border-color 180ms cubic-bezier(.23,1,.32,1)" style-hover="border-color:#9CA0A8" style-active="transform:scale(0.97)">Back</button>
+        </sc-if>
+        <sc-if value="{{ !showBack }}" hint-placeholder-val="{{ true }}"><span></span></sc-if>
+        <button sc-camel-on-click="{{ formNext }}" style="background:#2452F0;color:#fff;border:none;border-radius:6px;padding:13px 26px;font-size:14px;font-weight:600;font-family:inherit;cursor:pointer;min-height:44px;transition:transform 160ms cubic-bezier(.23,1,.32,1),background 180ms cubic-bezier(.23,1,.32,1)" style-hover="background:#1B3EC2" style-active="transform:scale(0.97)">{{ nextLabel }}</button>
+      </div>
+    </div>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isThankYou }}" hint-placeholder-val="{{ false }}">
+  <main data-screen-label="Thank You" style="min-height:80vh;display:flex;align-items:center;justify-content:center;padding:40px 24px;background:#16181C;color:#fff;text-align:center">
+    <div style="max-width:460px">
+      <div style="width:52px;height:52px;border-radius:10px;background:#2452F0;display:flex;align-items:center;justify-content:center;font-size:23px;margin:0 auto 24px;font-weight:700">✓</div>
+      <h1 style="font-weight:800;font-size:clamp(26px,3.6vw,34px);margin:0 0 14px;letter-spacing:-.03em">Thanks — we're on it.</h1>
+      <p style="font-size:15px;line-height:1.6;color:#C7CAD1;margin:0 0 8px">A search consultant will call you within one business day.</p>
+      <p style="font-size:13.5px;color:#9CA0A8;margin:0 0 28px">Reference: {{ referenceId }}</p>
+      <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+        <a href="https://wa.me/919999999999" target="_blank" style="background:#25D366;color:#0B2B14;border-radius:6px;padding:13px 22px;font-size:14px;font-weight:600;text-decoration:none;min-height:44px;display:inline-flex;align-items:center;transition:transform 160ms cubic-bezier(.23,1,.32,1)" style-active="transform:scale(0.97)">WhatsApp us</a>
+        <button sc-camel-on-click="{{ goHome }}" style="background:transparent;border:1px solid #4B4F58;color:#fff;border-radius:6px;padding:13px 22px;font-size:14px;font-weight:600;font-family:inherit;cursor:pointer;min-height:44px;transition:transform 160ms cubic-bezier(.23,1,.32,1),border-color 180ms cubic-bezier(.23,1,.32,1)" style-hover="border-color:#9CA0A8" style-active="transform:scale(0.97)">Back to home</button>
+      </div>
+    </div>
+  </main>
+  </sc-if>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{
+  &quot;$preview&quot;: {&quot;width&quot;: &quot;100%&quot;, &quot;height&quot;: &quot;100%&quot;},
+  &quot;accentColor&quot;: {&quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#2452F0&quot;, &quot;options&quot;: [[&quot;#2452F0&quot;,&quot;#1B3EC2&quot;,&quot;#EEF1FE&quot;,&quot;#F7F8FA&quot;,&quot;#16181C&quot;],[&quot;#0E7C6B&quot;,&quot;#0A5C4F&quot;,&quot;#E6F5F2&quot;,&quot;#F7F8FA&quot;,&quot;#16181C&quot;],[&quot;#C2410C&quot;,&quot;#9A3412&quot;,&quot;#FFF1E8&quot;,&quot;#F7F8FA&quot;,&quot;#16181C&quot;]], &quot;tsType&quot;: &quot;string&quot;},
+  &quot;heroHeadline&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Executive hiring, systemized.&quot;, &quot;tsType&quot;: &quot;string&quot;},
+  &quot;showDashboardMock&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;}
+}">
+class Component extends DCLogic {
+  state = {
+    view: 'home',
+    formStep: 1,
+    formData: { service:'', designation:'', department:'', ctcRange:'', positions:'', timeline:'', companyName:'', industry:'', companySize:'', city:'', name:'', phone:'', email:'', contactMethod:'' },
+    errors: {},
+    faqOpen: { f1: true },
+    referenceId: '',
+  };
+
+  goHome = () => this.setState({ view: 'home' });
+  goService = () => this.setState({ view: 'service' });
+  startSearchExec = () => this.setState(s => ({ view: 'form', formStep: 1, formData: { ...s.formData, service: 'exec' } }));
+  startSearchLD = () => this.setState(s => ({ view: 'form', formStep: 1, formData: { ...s.formData, service: 'ld' } }));
+
+  toggleFaqFor = (id) => () => this.setState(s => ({ faqOpen: { ...s.faqOpen, [id]: !s.faqOpen[id] } }));
+
+  setField = (key) => (e) => {
+    const val = e && e.target ? e.target.value : e;
+    this.setState(s => ({ formData: { ...s.formData, [key]: val }, errors: { ...s.errors, [key]: null } }));
+  };
+  setContactMethod = (id) => () => this.setState(s => ({ formData: { ...s.formData, contactMethod: id }, errors: { ...s.errors, contactMethod: null } }));
+  selectService = (id) => () => this.setState(s => ({ formData: { ...s.formData, service: id }, errors: { ...s.errors, service: null } }));
+
+  validateCurrentStep() {
+    const s = this.state.formData;
+    const errs = {};
+    const step = this.state.formStep;
+    if (step === 1) { if (!s.service) errs.service = 'Please pick one option to continue.'; }
+    if (step === 2) {
+      if (s.service !== 'ld') {
+        if (!s.designation) errs.designation = 'Required.';
+        if (!s.department) errs.department = 'Required.';
+        if (!s.ctcRange) errs.ctcRange = 'Please select a CTC range.';
+        if (!s.positions || Number(s.positions) < 1) errs.positions = 'Enter at least 1.';
+        if (!s.timeline) errs.timeline = 'Please select a timeline.';
+      } else {
+        if (!s.department) errs.department = 'Required.';
+        if (!s.timeline) errs.timeline = 'Please select a timeline.';
+      }
+    }
+    if (step === 3) {
+      if (!s.companyName) errs.companyName = 'Required.';
+      if (!s.industry) errs.industry = 'Please select an industry.';
+      if (!s.companySize) errs.companySize = 'Please select a size.';
+      if (!s.city) errs.city = 'Required.';
+    }
+    if (step === 4) {
+      if (!s.name) errs.name = 'Required.';
+      if (!/^[6-9]\d{9}$/.test(s.phone || '')) errs.phone = 'Enter a valid 10-digit Indian mobile number.';
+      if (s.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s.email)) errs.email = 'Enter a valid email address.';
+      if (!s.contactMethod) errs.contactMethod = 'Please pick a preferred contact method.';
+    }
+    this.setState({ errors: errs });
+    return Object.keys(errs).length === 0;
+  }
+
+  formNext = () => {
+    if (this.state.formStep === 5) { this.submitForm(); return; }
+    if (!this.validateCurrentStep()) return;
+    this.setState(s => ({ formStep: Math.min(5, s.formStep + 1) }));
+  };
+  formBack = () => this.setState(s => ({ formStep: Math.max(1, s.formStep - 1) }));
+
+  submitForm = () => {
+    const ref = 'T833-' + Math.floor(100000 + Math.random() * 900000);
+    this.setState({ view: 'thankyou', referenceId: ref, formStep: 1 });
+  };
+
+  renderVals() {
+    const st = this.state;
+    const fd = st.formData;
+    const handlers = {};
+    ['designation','department','ctcRange','positions','timeline','companyName','industry','companySize','city','name','phone','email'].forEach(k => { handlers[k] = this.setField(k); });
+
+    const howItWorks = [
+      { title:'Brief & benchmark', desc:'Align on mandate and comparable compensation before sourcing.' },
+      { title:'Confidential search', desc:'Direct outreach to a mapped, passive candidate pool.' },
+      { title:'Structured shortlist', desc:'Every candidate scored against the same rubric.' },
+      { title:'Offer support', desc:'We stay involved through negotiation and onboarding.' },
+    ];
+    const mockFilters = [
+      { label:'₹30–50L', bg:'#EEF1FE', fg:'#1B3EC2' },
+      { label:'Mumbai + Pune', bg:'#F1F2F4', fg:'#4B4F58' },
+      { label:'12+ yrs', bg:'#F1F2F4', fg:'#4B4F58' },
+    ];
+    const mockCandidates = [
+      { initials:'RK', name:'Candidate A-3821', meta:'VP Finance, 14 yrs, Mumbai', score:'86', scoreBg:'#E8F6EF', scoreFg:'#0A6343' },
+      { initials:'SM', name:'Candidate A-3814', meta:'Head Finance, 11 yrs, Pune', score:'81', scoreBg:'#E8F6EF', scoreFg:'#0A6343' },
+      { initials:'AN', name:'Candidate A-3806', meta:'Sr. Controller, 13 yrs, Mumbai', score:'74', scoreBg:'#FDF3E2', scoreFg:'#7A5010' },
+      { initials:'PV', name:'Candidate A-3799', meta:'GM Finance, 16 yrs, Nashik', score:'69', scoreBg:'#F1F2F4', scoreFg:'#4B4F58' },
+    ];
+    const mockScores = [
+      { label:'P&L ownership', pct:'92%', value:'92' },
+      { label:'Team leadership', pct:'86%', value:'86' },
+      { label:'Fundraise exposure', pct:'78%', value:'78' },
+      { label:'Systems & controls', pct:'84%', value:'84' },
+      { label:'Culture fit signal', pct:'71%', value:'71' },
+    ];
+    const numbers = [
+      { value:'340+', label:'Senior placements made' },
+      { value:'21 days', label:'Avg. time to shortlist' },
+      { value:'94%', label:'Offer acceptance rate' },
+      { value:'18', label:'Industries served' },
+    ];
+    const includedItems = [
+      { title:'Candidate mapping', desc:'A confidential map of the relevant passive market.' },
+      { title:'Competency benchmarking', desc:'Every candidate scored against a shared rubric.' },
+      { title:'Offer negotiation support', desc:'We manage compensation conversations.' },
+      { title:'Replacement guarantee', desc:'Free replacement search within 6 months.' },
+    ];
+    const processStages = [
+      { title:'Brief', desc:'Align on mandate & comp' },
+      { title:'Long-list', desc:'Confidential mapping' },
+      { title:'Assessment', desc:'Structured evaluation' },
+      { title:'Shortlist', desc:'3–5 ranked candidates' },
+      { title:'Offer', desc:'Negotiation support' },
+      { title:'Onboarding', desc:'First 90 days' },
+    ];
+    const caseStudies = [
+      { role:'VP – Finance', industry:'Manufacturing', ctc:'₹42L', time:'19 days' },
+      { role:'Head of Sales', industry:'SaaS', ctc:'₹35L', time:'24 days' },
+      { role:'CTO', industry:'Fintech', ctc:'₹68L', time:'31 days' },
+    ];
+    const faqDefs = [
+      { id:'f1', q:'What roles do you typically fill?', a:'Department heads through CXO — anything above ₹12 lakh CTC.' },
+      { id:'f2', q:'How is this different from an agency?', a:'Structured, benchmarked searches — every candidate scored the same way before you meet them.' },
+      { id:'f3', q:'What does the replacement guarantee cover?', a:'A free replacement search if a hire leaves within 6 months.' },
+      { id:'f4', q:'How confidential is the process?', a:'Fully — your company isn\'t named until a candidate clears initial screening.' },
+      { id:'f5', q:'What do you need from us to start?', a:'A short intake — role, comp band, and timeline. Under three minutes.' },
+    ];
+    const faqs = faqDefs.map(f => ({ ...f, open: !!st.faqOpen[f.id], symbol: st.faqOpen[f.id] ? '−' : '+', onToggle: this.toggleFaqFor(f.id) }));
+
+    const stepLabels = ['What you need','Role details','Your company','Contact details','Review & submit'];
+    if (fd.service === 'ld') stepLabels[1] = 'L&D details';
+    const progressDots = [1,2,3,4,5].map(n => ({ bg: n <= st.formStep ? '#2452F0' : '#E9EAED' }));
+
+    const cardStyle = (selected) => `text-align:left;padding:18px;border-radius:8px;cursor:pointer;font-family:inherit;min-height:44px;border:1.5px solid ${selected ? '#2452F0' : '#E9EAED'};background:${selected ? '#EEF1FE' : '#fff'};color:#16181C;transition:border-color 180ms cubic-bezier(.23,1,.32,1),background 180ms cubic-bezier(.23,1,.32,1)`;
+    const serviceOptions = [
+      { id:'exec', label:'Executive Search', desc:'Hire a senior leader (₹12L+ CTC).', cardStyle: cardStyle(fd.service === 'exec'), onSelect: this.selectService('exec') },
+      { id:'ld', label:'L&D Solutions', desc:'Build leadership capability.', cardStyle: cardStyle(fd.service === 'ld'), onSelect: this.selectService('ld') },
+      { id:'both', label:'Both', desc:'Hire and develop the team.', cardStyle: cardStyle(fd.service === 'both'), onSelect: this.selectService('both') },
+    ];
+    const industries = ['Manufacturing','SaaS / Technology','Fintech','Retail & Consumer','Healthcare','Logistics','Real Estate','Other'];
+    const labelStyle = 'display:block;font-size:13px;font-weight:600;color:#4B4F58;margin-bottom:7px';
+    const errStyle = 'color:#C42B2B;font-size:13px;margin:7px 0 0';
+    const inputStyle = 'width:100%;padding:12px 14px;border:1px solid #D8DAE0;border-radius:6px;font-size:14.5px;font-family:inherit;min-height:44px;box-sizing:border-box;background:#fff;color:#16181C;transition:border-color 180ms cubic-bezier(.23,1,.32,1)';
+    const selectStyle = inputStyle;
+    const cmStyle = (selected) => `flex:1;padding:11px;border-radius:6px;border:1.5px solid ${selected ? '#2452F0' : '#E9EAED'};background:${selected ? '#EEF1FE' : '#fff'};color:#16181C;font-family:inherit;font-size:13.5px;font-weight:600;cursor:pointer;min-height:44px;transition:border-color 180ms cubic-bezier(.23,1,.32,1),background 180ms cubic-bezier(.23,1,.32,1)`;
+    const contactMethods = [
+      { id:'call', label:'Call', style: cmStyle(fd.contactMethod === 'call'), onPick: this.setContactMethod('call') },
+      { id:'whatsapp', label:'WhatsApp', style: cmStyle(fd.contactMethod === 'whatsapp'), onPick: this.setContactMethod('whatsapp') },
+      { id:'email', label:'Email', style: cmStyle(fd.contactMethod === 'email'), onPick: this.setContactMethod('email') },
+    ];
+
+    const ctcLabels = { '12-18':'₹12L – 18L','18-30':'₹18L – 30L','30-50':'₹30L – 50L','50+':'₹50L+' };
+    const timelineLabels = { immediate:'Immediate', '1month':'Within 1 month', '3months':'Within 3 months', exploratory:'Just exploring' };
+    const serviceLabels = { exec:'Executive Search', ld:'L&D Solutions', both:'Both' };
+    const summaryRows = [{ label:'Service', value: serviceLabels[fd.service] || '—' }];
+    if (fd.service !== 'ld') {
+      summaryRows.push(
+        { label:'Designation', value: fd.designation || '—' },
+        { label:'Department', value: fd.department || '—' },
+        { label:'CTC range', value: ctcLabels[fd.ctcRange] || '—' },
+        { label:'Positions', value: fd.positions || '—' },
+        { label:'Timeline', value: timelineLabels[fd.timeline] || '—' },
+      );
+    } else {
+      summaryRows.push(
+        { label:'Department', value: fd.department || '—' },
+        { label:'Timeline', value: timelineLabels[fd.timeline] || '—' },
+      );
+    }
+    summaryRows.push(
+      { label:'Company', value: fd.companyName || '—' },
+      { label:'Industry', value: fd.industry || '—' },
+      { label:'Company size', value: fd.companySize || '—' },
+      { label:'City', value: fd.city || '—' },
+      { label:'Name', value: fd.name || '—' },
+      { label:'Phone', value: fd.phone || '—' },
+      { label:'Email', value: fd.email || '—' },
+      { label:'Preferred contact', value: fd.contactMethod || '—' },
+    );
+
+    return {
+      isHome: st.view === 'home', isService: st.view === 'service', isForm: st.view === 'form', isThankYou: st.view === 'thankyou',
+      goHome: this.goHome, goService: this.goService, startSearchExec: this.startSearchExec, startSearchLD: this.startSearchLD,
+      howItWorks, numbers, includedItems, processStages, caseStudies, faqs,
+      mockFilters, mockCandidates, mockScores,
+      formStep: st.formStep, totalSteps: 5, stepLabel: stepLabels[st.formStep - 1],
+      step1: st.formStep === 1, step2: st.formStep === 2, step3: st.formStep === 3, step4: st.formStep === 4, step5: st.formStep === 5,
+      progressDots, serviceOptions, industries, formData: fd, errors: st.errors,
+      handlers, labelStyle, errStyle, inputStyle, selectStyle, contactMethods,
+      showBack: st.formStep > 1, nextLabel: st.formStep === 5 ? 'Submit' : 'Continue',
+      formNext: this.formNext, formBack: this.formBack, summaryRows, referenceId: st.referenceId,
+    };
+  }
+}
+</script>
+
+
+</body></html>
