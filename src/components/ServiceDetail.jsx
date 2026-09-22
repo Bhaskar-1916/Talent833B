@@ -20,9 +20,9 @@ export default function ServiceDetail({ goHome, startSearchExec, mockScores, inc
       <section style={{ padding: '0 clamp(20px,5vw,56px) clamp(40px,6vw,72px)', maxWidth: '900px' }}>
         <motion.div 
           initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, amount: 0.1 }} transition={{ duration: 0.8 }}
-          style={{ border: '1px solid rgba(233,234,237,0.5)', borderRadius: '12px', background: 'rgba(255,255,255,0.8)', backdropFilter: 'blur(10px)', overflow: 'hidden', boxShadow: '0 20px 48px rgba(22,24,28,.06)' }}
+          style={{ border: '1px solid rgba(233,234,237,0.5)', borderRadius: '12px', background: 'transparent', backdropFilter: 'blur(10px)', overflow: 'hidden', boxShadow: 'none' }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px', padding: '16px 22px', borderBottom: '1px solid #E9EAED', background: '#FBFBFC', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px', padding: '16px 22px', borderBottom: '1px solid #E9EAED', background: 'transparent', flexWrap: 'wrap' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
               <span style={{ width: '36px', height: '36px', borderRadius: '50%', background: '#2452F0', color: '#fff', fontSize: '13px', fontWeight: 700, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>RK</span>
               <span>
@@ -40,7 +40,7 @@ export default function ServiceDetail({ goHome, startSearchExec, mockScores, inc
                 <span style={{ flex: 1, height: '7px', borderRadius: '4px', background: '#F1F2F4', display: 'block', position: 'relative', minWidth: '60px' }}>
                   <motion.span initial={{ width: 0 }} whileInView={{ width: s.pct }} viewport={{ once: false, amount: 0.1 }} transition={{ duration: 1, delay: i * 0.1 }} style={{ position: 'absolute', left: 0, top: 0, bottom: 0, borderRadius: '4px', background: '#2452F0', display: 'block' }}></motion.span>
                 </span>
-                <span style={{ fontSize: '12.5px', fontWeight: 700, color: '#16181C', width: '28px', textAlign: 'right', flex: 'none' }}>{s.value}</span>
+                <span style={{ fontSize: '12.5px', fontWeight: 700, color: 'var(--color-ink)', width: '28px', textAlign: 'right', flex: 'none' }}>{s.value}</span>
               </div>
             ))}
           </div>
@@ -49,9 +49,9 @@ export default function ServiceDetail({ goHome, startSearchExec, mockScores, inc
 
       <section style={{ padding: 'clamp(40px,6vw,64px) clamp(20px,5vw,56px)' }}>
         <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.1 }} variants={fadeUp} style={{ fontWeight: 700, fontSize: 'clamp(22px,2.6vw,28px)', margin: '0 0 28px', letterSpacing: '-.025em' }}>What's included</motion.h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(220px,1fr))', gap: '1px', background: '#fff', border: '1px solid #E9EAED', borderRadius: '12px', overflow: 'hidden' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(220px,1fr))', gap: '1px', background: 'transparent', border: '1px solid #E9EAED', borderRadius: '12px', overflow: 'hidden' }}>
           {includedItems.map((item, i) => (
-            <motion.div key={i} whileHover={{ backgroundColor: '#FBFBFC', scale: 1.02 }} style={{ padding: '24px 22px', background: '#fff', boxShadow: '0 0 0 1px #E9EAED' }}>
+            <motion.div key={i} whileHover={{ backgroundColor: '#FBFBFC', scale: 1.02 }} style={{ padding: '24px 22px', background: 'transparent', boxShadow: '0 0 0 1px #E9EAED' }}>
               <h3 style={{ fontSize: '15.5px', fontWeight: 700, margin: '0 0 8px', letterSpacing: '-.01em' }}>{item.title}</h3>
               <p style={{ fontSize: '13.5px', lineHeight: 1.6, color: '#4B4F58', margin: 0 }}>{item.desc}</p>
             </motion.div>
@@ -71,9 +71,9 @@ export default function ServiceDetail({ goHome, startSearchExec, mockScores, inc
         </div>
       </section>
 
-      <section style={{ padding: 'clamp(40px,6vw,64px) clamp(20px,5vw,56px)', background: '#F7F8FA' }}>
+      <section style={{ padding: 'clamp(40px,6vw,64px) clamp(20px,5vw,56px)', background: 'transparent' }}>
         <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.1 }} variants={fadeUp} style={{ fontWeight: 700, fontSize: 'clamp(22px,2.6vw,28px)', margin: '0 0 24px', letterSpacing: '-.025em' }}>Recent closes</motion.h2>
-        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: false, amount: 0.1 }} style={{ overflowX: 'auto', background: '#fff', border: '1px solid #E9EAED', borderRadius: '12px' }}>
+        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: false, amount: 0.1 }} style={{ overflowX: 'auto', background: 'transparent', border: '1px solid #E9EAED', borderRadius: '12px' }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: '520px' }}>
             <thead>
               <tr style={{ borderBottom: '1px solid #E9EAED' }}>
@@ -102,7 +102,7 @@ export default function ServiceDetail({ goHome, startSearchExec, mockScores, inc
         {faqs.map((faq) => (
           <div key={faq.id} style={{ borderBottom: '1px solid #E9EAED' }}>
             <button onClick={() => toggleFaqFor(faq.id)} style={{ width: '100%', textAlign: 'left', background: 'none', border: 'none', padding: '18px 0', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '14px', cursor: 'pointer', fontFamily: 'inherit', minHeight: '44px', transition: 'opacity 180ms ease' }}>
-              <span style={{ fontSize: '15px', fontWeight: 700, color: '#16181C', letterSpacing: '-.01em' }}>{faq.q}</span>
+              <span style={{ fontSize: '15px', fontWeight: 700, color: 'var(--color-ink)', letterSpacing: '-.01em' }}>{faq.q}</span>
               <span style={{ fontSize: '17px', color: '#5F636B', flex: 'none', width: '24px', textAlign: 'center' }}>{faq.symbol}</span>
             </button>
             <AnimatePresence>
@@ -116,10 +116,10 @@ export default function ServiceDetail({ goHome, startSearchExec, mockScores, inc
         ))}
       </section>
 
-      <section style={{ padding: 'clamp(48px,7vw,80px) clamp(20px,5vw,56px)', textAlign: 'center', background: '#16181C', color: '#fff' }}>
+      <section style={{ padding: 'clamp(48px,7vw,80px) clamp(20px,5vw,56px)', textAlign: 'center', background: 'var(--color-ink)', color: '#fff' }}>
         <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.1 }} variants={fadeUp} style={{ fontWeight: 800, fontSize: 'clamp(24px,3.2vw,32px)', margin: '0 0 12px', letterSpacing: '-.03em' }}>Tell us who you're hiring for</motion.h2>
         <motion.p initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.1 }} variants={fadeUp} style={{ fontSize: '15.5px', color: '#9CA0A8', margin: '0 0 26px' }}>A short intake — three minutes.</motion.p>
-        <motion.button initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.1 }} variants={fadeUp} whileHover={{ scale: 1.03, backgroundColor: '#E9EAED' }} whileTap={{ scale: 0.97 }} onClick={startSearchExec} style={{ background: '#fff', color: '#16181C', border: 'none', borderRadius: '6px', padding: '16px 32px', fontSize: '16px', fontWeight: 600, cursor: 'pointer', minHeight: '44px' }}>Start your search</motion.button>
+        <motion.button initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.1 }} variants={fadeUp} whileHover={{ scale: 1.03, backgroundColor: '#E9EAED' }} whileTap={{ scale: 0.97 }} onClick={startSearchExec} style={{ background: 'transparent', color: 'var(--color-ink)', border: 'none', borderRadius: '6px', padding: '16px 32px', fontSize: '16px', fontWeight: 600, cursor: 'pointer', minHeight: '44px' }}>Start your search</motion.button>
       </section>
     </main>
   );

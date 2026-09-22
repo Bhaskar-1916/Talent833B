@@ -10,7 +10,7 @@ export default function FormView({ goHome, formStep, totalSteps, stepLabel, step
   };
 
   return (
-    <main data-screen-label="Lead Qualification Form" style={{ minHeight: '80vh', background: '#F7F8FA', padding: 'clamp(28px,5vw,48px) clamp(16px,5vw,24px) 72px' }}>
+    <main data-screen-label="Lead Qualification Form" style={{ minHeight: '80vh', background: 'transparent', padding: 'clamp(28px,5vw,48px) clamp(16px,5vw,24px) 72px' }}>
       <div style={{ maxWidth: '600px', margin: '0 auto' }}>
         <a href="#" onClick={(e) => { e.preventDefault(); goHome(); }} style={{ fontSize: '13.5px', color: '#5F636B', textDecoration: 'none' }}>← Back</a>
         
@@ -23,7 +23,7 @@ export default function FormView({ goHome, formStep, totalSteps, stepLabel, step
 
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4 }}
-          style={{ background: '#fff', border: '1px solid #E9EAED', borderRadius: '12px', padding: 'clamp(24px,4vw,36px)', boxShadow: '0 10px 30px rgba(0,0,0,0.04)' }}
+          style={{ background: 'transparent', border: '1px solid #E9EAED', borderRadius: '12px', padding: 'clamp(24px,4vw,36px)', boxShadow: '0 10px 30px rgba(0,0,0,0.04)' }}
         >
           <AnimatePresence mode="wait">
             {step1 && (
@@ -31,7 +31,7 @@ export default function FormView({ goHome, formStep, totalSteps, stepLabel, step
                 <h2 style={{ fontWeight: 800, fontSize: '21px', margin: '0 0 22px', letterSpacing: '-.025em' }}>What do you need?</h2>
                 <div style={{ display: 'grid', gap: '10px' }}>
                   {serviceOptions.map((opt, i) => (
-                    <motion.button key={i} whileHover={{ scale: 1.01 }} whileTap={{ scale: 0.98 }} onClick={opt.onSelect} style={{ textAlign: 'left', padding: '18px', borderRadius: '8px', cursor: 'pointer', fontFamily: 'inherit', minHeight: '44px', border: `1.5px solid ${opt.selected ? '#2452F0' : '#E9EAED'}`, background: opt.selected ? '#EEF1FE' : '#fff', color: '#16181C' }}>
+                    <motion.button key={i} whileHover={{ scale: 1.01 }} whileTap={{ scale: 0.98 }} onClick={opt.onSelect} style={{ textAlign: 'left', padding: '18px', borderRadius: '8px', cursor: 'pointer', fontFamily: 'inherit', minHeight: '44px', border: `1.5px solid ${opt.selected ? '#2452F0' : '#E9EAED'}`, background: opt.selected ? '#EEF1FE' : '#fff', color: 'var(--color-ink)' }}>
                       <div style={{ fontSize: '15.5px', fontWeight: 700, marginBottom: '3px' }}>{opt.label}</div>
                       <div style={{ fontSize: '13.5px', color: '#5F636B' }}>{opt.desc}</div>
                     </motion.button>
@@ -60,7 +60,7 @@ export default function FormView({ goHome, formStep, totalSteps, stepLabel, step
                     <>
                       <div>
                         <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#4B4F58', marginBottom: '7px' }}>CTC range</label>
-                        <select value={formData.ctcRange} onChange={handlers.ctcRange} style={{ width: '100%', padding: '12px 14px', border: '1px solid #D8DAE0', borderRadius: '6px', fontSize: '14.5px', fontFamily: 'inherit', minHeight: '44px', boxSizing: 'border-box', background: '#fff' }}>
+                        <select value={formData.ctcRange} onChange={handlers.ctcRange} style={{ width: '100%', padding: '12px 14px', border: '1px solid #D8DAE0', borderRadius: '6px', fontSize: '14.5px', fontFamily: 'inherit', minHeight: '44px', boxSizing: 'border-box', background: 'transparent' }}>
                           <option value="">Select a range</option>
                           <option value="12-18">₹12L – 18L</option>
                           <option value="18-30">₹18L – 30L</option>
@@ -78,7 +78,7 @@ export default function FormView({ goHome, formStep, totalSteps, stepLabel, step
                   )}
                   <div>
                     <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#4B4F58', marginBottom: '7px' }}>Timeline</label>
-                    <select value={formData.timeline} onChange={handlers.timeline} style={{ width: '100%', padding: '12px 14px', border: '1px solid #D8DAE0', borderRadius: '6px', fontSize: '14.5px', fontFamily: 'inherit', minHeight: '44px', boxSizing: 'border-box', background: '#fff' }}>
+                    <select value={formData.timeline} onChange={handlers.timeline} style={{ width: '100%', padding: '12px 14px', border: '1px solid #D8DAE0', borderRadius: '6px', fontSize: '14.5px', fontFamily: 'inherit', minHeight: '44px', boxSizing: 'border-box', background: 'transparent' }}>
                       <option value="">Select timeline</option>
                       <option value="immediate">Immediate</option>
                       <option value="1month">Within 1 month</option>
@@ -101,7 +101,7 @@ export default function FormView({ goHome, formStep, totalSteps, stepLabel, step
                   </div>
                   <div>
                     <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#4B4F58', marginBottom: '7px' }}>Industry</label>
-                    <select value={formData.industry} onChange={handlers.industry} style={{ width: '100%', padding: '12px 14px', border: '1px solid #D8DAE0', borderRadius: '6px', fontSize: '14.5px', fontFamily: 'inherit', minHeight: '44px', boxSizing: 'border-box', background: '#fff' }}>
+                    <select value={formData.industry} onChange={handlers.industry} style={{ width: '100%', padding: '12px 14px', border: '1px solid #D8DAE0', borderRadius: '6px', fontSize: '14.5px', fontFamily: 'inherit', minHeight: '44px', boxSizing: 'border-box', background: 'transparent' }}>
                       <option value="">Select industry</option>
                       {industries.map(ind => <option key={ind} value={ind}>{ind}</option>)}
                     </select>
@@ -109,7 +109,7 @@ export default function FormView({ goHome, formStep, totalSteps, stepLabel, step
                   </div>
                   <div>
                     <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#4B4F58', marginBottom: '7px' }}>Company size</label>
-                    <select value={formData.companySize} onChange={handlers.companySize} style={{ width: '100%', padding: '12px 14px', border: '1px solid #D8DAE0', borderRadius: '6px', fontSize: '14.5px', fontFamily: 'inherit', minHeight: '44px', boxSizing: 'border-box', background: '#fff' }}>
+                    <select value={formData.companySize} onChange={handlers.companySize} style={{ width: '100%', padding: '12px 14px', border: '1px solid #D8DAE0', borderRadius: '6px', fontSize: '14.5px', fontFamily: 'inherit', minHeight: '44px', boxSizing: 'border-box', background: 'transparent' }}>
                       <option value="">Select size</option>
                       <option value="1-50">1 – 50</option>
                       <option value="51-200">51 – 200</option>
@@ -149,7 +149,7 @@ export default function FormView({ goHome, formStep, totalSteps, stepLabel, step
                     <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#4B4F58', marginBottom: '7px' }}>Preferred contact method</label>
                     <div style={{ display: 'flex', gap: '8px' }}>
                       {contactMethods.map(cm => (
-                        <motion.button key={cm.id} whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} onClick={cm.onPick} style={{ flex: 1, padding: '11px', borderRadius: '6px', border: `1.5px solid ${cm.selected ? '#2452F0' : '#E9EAED'}`, background: cm.selected ? '#EEF1FE' : '#fff', color: '#16181C', fontFamily: 'inherit', fontSize: '13.5px', fontWeight: 600, cursor: 'pointer', minHeight: '44px' }}>{cm.label}</motion.button>
+                        <motion.button key={cm.id} whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} onClick={cm.onPick} style={{ flex: 1, padding: '11px', borderRadius: '6px', border: `1.5px solid ${cm.selected ? '#2452F0' : '#E9EAED'}`, background: cm.selected ? '#EEF1FE' : '#fff', color: 'var(--color-ink)', fontFamily: 'inherit', fontSize: '13.5px', fontWeight: 600, cursor: 'pointer', minHeight: '44px' }}>{cm.label}</motion.button>
                       ))}
                     </div>
                     {errors.contactMethod && <p style={{ color: '#C42B2B', fontSize: '13px', margin: '7px 0 0' }}>{errors.contactMethod}</p>}
@@ -175,7 +175,7 @@ export default function FormView({ goHome, formStep, totalSteps, stepLabel, step
 
         <div style={{ display: 'flex', justifyContent: 'space-between', gap: '12px', marginTop: '20px' }}>
           {showBack ? (
-            <motion.button whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} onClick={formBack} style={{ background: '#fff', border: '1px solid #D8DAE0', color: '#16181C', borderRadius: '6px', padding: '13px 22px', fontSize: '14px', fontWeight: 600, cursor: 'pointer', minHeight: '44px' }}>Back</motion.button>
+            <motion.button whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} onClick={formBack} style={{ background: 'transparent', border: '1px solid #D8DAE0', color: 'var(--color-ink)', borderRadius: '6px', padding: '13px 22px', fontSize: '14px', fontWeight: 600, cursor: 'pointer', minHeight: '44px' }}>Back</motion.button>
           ) : <span></span>}
           <motion.button whileHover={{ scale: 1.03, boxShadow: '0 4px 14px rgba(36,82,240,0.4)' }} whileTap={{ scale: 0.97 }} onClick={formNext} style={{ background: '#2452F0', color: '#fff', border: 'none', borderRadius: '6px', padding: '13px 26px', fontSize: '14px', fontWeight: 600, cursor: 'pointer', minHeight: '44px' }}>{nextLabel}</motion.button>
         </div>

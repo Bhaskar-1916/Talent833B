@@ -6,6 +6,7 @@ import Home from './components/Home';
 import ServiceDetail from './components/ServiceDetail';
 import FormView from './components/Form';
 import ThankYou from './components/ThankYou';
+import VideoBackground from './components/VideoBackground';
 import { howItWorks, mockFilters, mockCandidates, mockScores, numbers, includedItems, processStages, caseStudies, faqDefs, industries } from './data';
 import './index.css';
 
@@ -132,6 +133,7 @@ export default function App() {
 
   return (
     <div style={{ maxWidth: '100%', overflowX: 'hidden' }}>
+      <VideoBackground />
       <Navbar goHome={goHome} goService={goService} startSearchExec={startSearchExec} />
       
       {view === 'home' && (

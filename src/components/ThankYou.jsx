@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function ThankYou({ goHome, referenceId }) {
   return (
-    <main data-screen-label="Thank You" style={{ minHeight: '80vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '40px 24px', background: '#16181C', color: '#fff', textAlign: 'center' }}>
+    <main data-screen-label="Thank You" style={{ minHeight: '80vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '40px 24px', background: 'var(--color-ink)', color: '#fff', textAlign: 'center' }}>
       <div style={{ maxWidth: '460px' }}>
         <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: 'spring', stiffness: 200, damping: 10 }} style={{ width: '52px', height: '52px', borderRadius: '10px', background: '#2452F0', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '23px', margin: '0 auto 24px', fontWeight: 700 }}>✓</motion.div>
         <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} style={{ fontWeight: 800, fontSize: 'clamp(26px,3.6vw,34px)', margin: '0 0 14px', letterSpacing: '-.03em' }}>Thanks — we're on it.</motion.h1>
