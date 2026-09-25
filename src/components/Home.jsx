@@ -2,6 +2,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion, useInView, animate } from 'framer-motion';
 
+/* ── Animated counter ───────────────────────────────────────── */
 function AnimatedNumber({ value, label, delayIndex }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: false, amount: 0.5 });
@@ -12,10 +13,8 @@ function AnimatedNumber({ value, label, delayIndex }) {
     if (inView) {
       const controls = animate(0, target, {
         duration: 1.5,
-        ease: "easeOut",
-        onUpdate(v) {
-          setCount(Math.round(v));
-        }
+        ease: 'easeOut',
+        onUpdate(v) { setCount(Math.round(v)); },
       });
       return () => controls.stop();
     } else {
@@ -24,71 +23,148 @@ function AnimatedNumber({ value, label, delayIndex }) {
   }, [inView, target]);
 
   return (
-    <motion.div ref={ref} initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }} transition={{ duration: 0.5, delay: delayIndex * 0.1 }}>
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 20 }}
+      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+      transition={{ duration: 0.5, delay: delayIndex * 0.12 }}
+    >
       <div style={{ fontWeight: 800, fontSize: 'clamp(30px,3.6vw,42px)', color: '#fff', marginBottom: '6px', letterSpacing: '-.03em' }}>
         {value.replace(/\d+/, count)}
       </div>
-      <div style={{ fontSize: '13.5px', color: '#9CA0A8', lineHeight: 1.4 }}>{label}</div>
+      <div style={{ fontSize: '13.5px', color: 'rgba(255,255,255,0.45)', lineHeight: 1.4 }}>{label}</div>
     </motion.div>
   );
 }
 
+/* ── Home ───────────────────────────────────────────────────── */
 export default function Home({ startSearchExec, goService, startSearchLD, mockFilters, mockCandidates, howItWorks, numbers, caseStudies }) {
 
-
-
   const fadeUp = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+    hidden:  { opacity: 0, y: 32 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.23, 1, 0.32, 1] } },
   };
 
+  const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
+
   return (
-    <main data-screen-label="Homepage">
-      <section style={{ padding: 'clamp(56px,9vw,104px) clamp(20px,5vw,56px) clamp(40px,6vw,64px)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,340px),1fr))', gap: 'clamp(36px,5vw,64px)', alignItems: 'center' }}>
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.1 }} variants={{ visible: { transition: { staggerChildren: 0.1 } } }}>
-          <motion.div variants={fadeUp} style={{ display: 'inline-flex', alignItems: 'center', fontSize: '13px', fontWeight: 600, color: '#2452F0', background: '#EEF1FE', borderRadius: '6px', padding: '6px 12px', marginBottom: '22px' }}>Roles from ₹12L CTC</motion.div>
-          <motion.h1 variants={fadeUp} style={{ fontWeight: 800, fontSize: 'clamp(38px,7vw,68px)', lineHeight: 1.02, margin: '0 0 20px', letterSpacing: '-.04em', textWrap: 'balance' }}>Executive hiring, systemized.</motion.h1>
-          <motion.p variants={fadeUp} style={{ fontSize: 'clamp(17px,2vw,19px)', lineHeight: 1.55, color: '#4B4F58', maxWidth: '46ch', margin: '0 0 30px' }}>Structured search for senior and leadership roles. Mapped candidates, scored shortlists, one dashboard.</motion.p>
+    <main data-screen-label="Homepage" style={{ position: 'relative', zIndex: 2 }}>
+
+      {/* ── Hero ─────────────────────────────────────────────── */}
+      <section style={{
+        padding: 'clamp(72px,10vw,120px) clamp(20px,5vw,56px) clamp(48px,6vw,72px)',
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))',
+        gap: 'clamp(40px,5vw,72px)',
+        alignItems: 'center',
+      }}>
+        {/* Left copy */}
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.1 }} variants={stagger}>
+
+          {/* Badge */}
+          <motion.div variants={fadeUp} style={{
+            display: 'inline-flex', alignItems: 'center',
+            fontSize: '12.5px', fontWeight: 600,
+            color: '#8eb4ff',
+            background: 'rgba(79,125,255,0.14)',
+            border: '1px solid rgba(79,125,255,0.3)',
+            borderRadius: '6px', padding: '6px 12px', marginBottom: '26px',
+          }}>
+            Roles from ₹12L CTC
+          </motion.div>
+
+          <motion.h1 variants={fadeUp} style={{
+            fontWeight: 800,
+            fontSize: 'clamp(38px,7vw,72px)',
+            lineHeight: 1.02,
+            margin: '0 0 22px',
+            letterSpacing: '-.04em',
+            textWrap: 'balance',
+            color: '#fff',
+          }}>
+            Executive hiring,<br />systemized.
+          </motion.h1>
+
+          <motion.p variants={fadeUp} style={{
+            fontSize: 'clamp(16px,2vw,18.5px)',
+            lineHeight: 1.6,
+            color: 'rgba(255,255,255,0.55)',
+            maxWidth: '44ch',
+            margin: '0 0 36px',
+          }}>
+            Structured search for senior and leadership roles. Mapped candidates, scored shortlists, one dashboard.
+          </motion.p>
+
           <motion.div variants={fadeUp} style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-            <motion.button whileHover={{ scale: 1.03, boxShadow: '0 4px 14px rgba(36,82,240,0.4)' }} whileTap={{ scale: 0.97 }} onClick={startSearchExec} style={{ background: '#2452F0', color: '#fff', border: 'none', borderRadius: '6px', padding: '15px 28px', fontSize: '15.5px', fontWeight: 600, cursor: 'pointer', minHeight: '44px' }}>Start your search</motion.button>
-            <motion.button whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} onClick={goService} style={{ background: 'transparent', color: 'var(--color-ink)', border: '1px solid #D8DAE0', borderRadius: '6px', padding: '15px 24px', fontSize: '15.5px', fontWeight: 600, cursor: 'pointer', minHeight: '44px' }}>How it works</motion.button>
+            <motion.button
+              className="neural-btn-primary"
+              whileTap={{ scale: 0.97 }}
+              onClick={startSearchExec}
+              style={{ padding: '15px 30px', fontSize: '15.5px', minHeight: '44px' }}
+            >
+              Start your search
+            </motion.button>
+            <motion.button
+              className="neural-btn-secondary"
+              whileTap={{ scale: 0.97 }}
+              onClick={goService}
+              style={{ padding: '15px 24px', fontSize: '15.5px', minHeight: '44px' }}
+            >
+              How it works
+            </motion.button>
           </motion.div>
         </motion.div>
 
-        <motion.div 
-          initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: false, amount: 0.1 }} transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-          whileHover={{ y: -5, boxShadow: '0 20px 48px rgba(36,82,240,0.15)' }}
-          style={{ border: '1px solid rgba(233,234,237,0.5)', borderRadius: '12px', background: 'transparent', backdropFilter: 'blur(10px)', overflow: 'hidden', boxShadow: 'none' }}
+        {/* Right — candidate pipeline card */}
+        <motion.div
+          className="glass-panel"
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: false, amount: 0.1 }}
+          transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1], delay: 0.2 }}
+          whileHover={{ y: -6, boxShadow: '0 24px 64px rgba(0,0,0,0.65), 0 0 0 1px rgba(255,255,255,0.06) inset' }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '12px 16px', borderBottom: '1px solid #E9EAED', background: 'transparent' }}>
+          {/* Titlebar */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '12px 16px', borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
             <div style={{ display: 'flex', gap: '5px' }}>
-              <span style={{ width: '9px', height: '9px', borderRadius: '50%', background: '#E1E3E8', display: 'block' }}></span>
-              <span style={{ width: '9px', height: '9px', borderRadius: '50%', background: '#E1E3E8', display: 'block' }}></span>
-              <span style={{ width: '9px', height: '9px', borderRadius: '50%', background: '#E1E3E8', display: 'block' }}></span>
+              {['rgba(255,255,255,0.15)', 'rgba(255,255,255,0.15)', 'rgba(255,255,255,0.15)'].map((bg, i) => (
+                <span key={i} style={{ width: '9px', height: '9px', borderRadius: '50%', background: bg, display: 'block' }} />
+              ))}
             </div>
-            <div style={{ fontSize: '12px', fontWeight: 600, color: '#5F636B' }}>Active search — VP Finance</div>
+            <div style={{ fontSize: '12px', fontWeight: 600, color: 'rgba(255,255,255,0.45)' }}>Active search — VP Finance</div>
           </div>
+
           <div style={{ display: 'flex' }}>
-            <div style={{ width: '46px', borderRight: '1px solid #E9EAED', padding: '14px 0', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', background: 'transparent' }}>
-              <span style={{ width: '20px', height: '20px', borderRadius: '5px', background: '#2452F0', display: 'block' }}></span>
-              <span style={{ width: '20px', height: '20px', borderRadius: '5px', background: '#E1E3E8', display: 'block' }}></span>
-              <span style={{ width: '20px', height: '20px', borderRadius: '5px', background: '#E1E3E8', display: 'block' }}></span>
-              <span style={{ width: '20px', height: '20px', borderRadius: '5px', background: '#E1E3E8', display: 'block' }}></span>
+            {/* Sidebar icons */}
+            <div style={{ width: '46px', borderRight: '1px solid rgba(255,255,255,0.06)', padding: '14px 0', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px' }}>
+              {[true, false, false, false].map((active, i) => (
+                <span key={i} style={{ width: '20px', height: '20px', borderRadius: '5px', background: active ? 'rgba(79,125,255,0.7)' : 'rgba(255,255,255,0.08)', display: 'block' }} />
+              ))}
             </div>
+
+            {/* Candidate rows */}
             <div style={{ flex: 1, padding: '16px', minWidth: 0 }}>
+              {/* Filters */}
               <div style={{ display: 'flex', gap: '6px', marginBottom: '16px', flexWrap: 'wrap' }}>
                 {mockFilters.map((f, i) => (
-                  <span key={i} style={{ fontSize: '11.5px', fontWeight: 600, padding: '5px 10px', borderRadius: '5px', background: f.bg, color: f.fg }}>{f.label}</span>
+                  <span key={i} style={{ fontSize: '11.5px', fontWeight: 600, padding: '5px 10px', borderRadius: '5px', background: 'rgba(79,125,255,0.15)', color: '#8eb4ff', border: '1px solid rgba(79,125,255,0.25)' }}>
+                    {f.label}
+                  </span>
                 ))}
               </div>
+
               {mockCandidates.map((c, i) => (
-                <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '11px 0', borderBottom: i === mockCandidates.length - 1 ? 'none' : '1px solid #F1F2F4' }}>
-                  <span style={{ width: '28px', height: '28px', borderRadius: '50%', background: '#2452F0', color: '#fff', fontSize: '11px', fontWeight: 700, display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 'none' }}>{c.initials}</span>
-                  <span style={{ flex: 1, minWidth: 0 }}>
-                    <span style={{ display: 'block', fontSize: '12.5px', fontWeight: 600, color: 'var(--color-ink)' }}>{c.name}</span>
-                    <span style={{ display: 'block', fontSize: '11.5px', color: '#5F636B' }}>{c.meta}</span>
+                <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '11px 0', borderBottom: i === mockCandidates.length - 1 ? 'none' : '1px solid rgba(255,255,255,0.05)' }}>
+                  <span style={{ width: '28px', height: '28px', borderRadius: '50%', background: 'rgba(79,125,255,0.6)', color: '#fff', fontSize: '11px', fontWeight: 700, display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 'none' }}>
+                    {c.initials}
                   </span>
-                  <span style={{ fontSize: '11.5px', fontWeight: 700, padding: '4px 9px', borderRadius: '5px', background: c.scoreBg, color: c.scoreFg, flex: 'none' }}>{c.score}</span>
+                  <span style={{ flex: 1, minWidth: 0 }}>
+                    <span style={{ display: 'block', fontSize: '12.5px', fontWeight: 600, color: '#f4f4f5' }}>{c.name}</span>
+                    <span style={{ display: 'block', fontSize: '11.5px', color: 'rgba(255,255,255,0.45)' }}>{c.meta}</span>
+                  </span>
+                  <span style={{ fontSize: '11.5px', fontWeight: 700, padding: '4px 9px', borderRadius: '5px', background: 'rgba(16,185,129,0.18)', color: '#34d399', flex: 'none' }}>
+                    {c.score}
+                  </span>
                 </div>
               ))}
             </div>
@@ -96,57 +172,125 @@ export default function Home({ startSearchExec, goService, startSearchLD, mockFi
         </motion.div>
       </section>
 
+      {/* ── How it runs ──────────────────────────────────────── */}
       <section style={{ padding: 'clamp(48px,7vw,80px) clamp(20px,5vw,56px)' }}>
-        <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.1 }} variants={fadeUp} style={{ fontWeight: 700, fontSize: 'clamp(24px,2.8vw,30px)', margin: '0 0 10px', letterSpacing: '-.025em' }}>How it runs</motion.h2>
-        <motion.p initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.1 }} variants={fadeUp} style={{ fontSize: '15.5px', color: '#5F636B', margin: '0 0 32px', maxWidth: '48ch' }}>Four stages, same structure every time.</motion.p>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(230px,1fr))', gap: '1px', background: 'transparent', border: '1px solid #E9EAED', borderRadius: '12px', overflow: 'hidden' }}>
+        <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.1 }} variants={fadeUp}
+          style={{ fontWeight: 700, fontSize: 'clamp(24px,2.8vw,30px)', margin: '0 0 10px', letterSpacing: '-.025em', color: '#fff' }}>
+          How it runs
+        </motion.h2>
+        <motion.p initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.1 }} variants={fadeUp}
+          style={{ fontSize: '15.5px', color: 'rgba(255,255,255,0.45)', margin: '0 0 36px', maxWidth: '48ch' }}>
+          Four stages, same structure every time.
+        </motion.p>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(230px,1fr))', gap: '1px' }}>
           {howItWorks.map((step, i) => (
-            <motion.div key={i} whileHover={{ backgroundColor: '#FBFBFC', scale: 1.02 }} style={{ padding: '26px 22px', background: 'transparent', boxShadow: '0 0 0 1px #E9EAED' }}>
-              <h3 style={{ fontSize: '16px', fontWeight: 700, margin: '0 0 8px', letterSpacing: '-.01em' }}>{step.title}</h3>
-              <p style={{ fontSize: '14px', lineHeight: 1.6, color: '#4B4F58', margin: 0 }}>{step.desc}</p>
+            <motion.div
+              key={i}
+              className="glass-panel"
+              initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.1 }}
+              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.55, delay: i * 0.08 } } }}
+              whileHover={{ y: -4 }}
+              style={{ borderRadius: '12px', padding: '26px 22px' }}
+            >
+              <div style={{ fontSize: '11px', fontWeight: 700, color: 'rgba(79,125,255,0.8)', letterSpacing: '.08em', textTransform: 'uppercase', marginBottom: '10px' }}>
+                0{i + 1}
+              </div>
+              <h3 style={{ fontSize: '16px', fontWeight: 700, margin: '0 0 8px', letterSpacing: '-.01em', color: '#fff' }}>{step.title}</h3>
+              <p style={{ fontSize: '14px', lineHeight: 1.6, color: 'rgba(255,255,255,0.45)', margin: 0 }}>{step.desc}</p>
             </motion.div>
           ))}
         </div>
       </section>
 
-      <section style={{ padding: 'clamp(44px,6vw,64px) clamp(20px,5vw,56px)', background: 'var(--color-ink)' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(150px,1fr))', gap: 'clamp(24px,4vw,44px)' }}>
+      {/* ── Stats ────────────────────────────────────────────── */}
+      <section style={{ padding: 'clamp(44px,6vw,64px) clamp(20px,5vw,56px)', position: 'relative', overflow: 'hidden' }}>
+        {/* Subtle glow behind stats */}
+        <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: '60vw', height: '60vw', background: 'radial-gradient(circle, rgba(79,125,255,0.08) 0%, transparent 70%)', pointerEvents: 'none' }} />
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px,1fr))', gap: 'clamp(24px,4vw,44px)', position: 'relative' }}>
           {numbers.map((stat, i) => (
             <AnimatedNumber key={i} value={stat.value} label={stat.label} delayIndex={i} />
           ))}
         </div>
       </section>
 
+      {/* ── Two ways we help ─────────────────────────────────── */}
       <section style={{ padding: 'clamp(48px,7vw,80px) clamp(20px,5vw,56px)' }}>
-        <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.1 }} variants={fadeUp} style={{ fontWeight: 700, fontSize: 'clamp(24px,2.8vw,30px)', margin: '0 0 32px', letterSpacing: '-.025em' }}>Two ways we help</motion.h2>
+        <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.1 }} variants={fadeUp}
+          style={{ fontWeight: 700, fontSize: 'clamp(24px,2.8vw,30px)', margin: '0 0 32px', letterSpacing: '-.025em', color: '#fff' }}>
+          Two ways we help
+        </motion.h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: '16px' }}>
-          <motion.div whileHover={{ y: -5, boxShadow: '0 12px 24px rgba(36,82,240,0.3)' }} style={{ background: '#2452F0', color: '#fff', borderRadius: '12px', padding: 'clamp(28px,4vw,44px)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', minHeight: '240px' }}>
+
+          {/* Executive Search card */}
+          <motion.div
+            className="glass-panel"
+            initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, amount: 0.1 }}
+            transition={{ duration: 0.6 }}
+            whileHover={{ y: -6 }}
+            style={{
+              padding: 'clamp(28px,4vw,44px)',
+              display: 'flex', flexDirection: 'column', justifyContent: 'space-between', minHeight: '240px',
+              background: 'linear-gradient(135deg, rgba(79,125,255,0.18) 0%, rgba(14,14,18,0.6) 100%)',
+            }}
+          >
             <div>
-              <div style={{ fontSize: '13px', fontWeight: 600, color: '#DDE4FD', marginBottom: '16px' }}>Primary service</div>
-              <h3 style={{ fontSize: 'clamp(22px,2.8vw,28px)', fontWeight: 800, margin: '0 0 10px', letterSpacing: '-.025em' }}>Executive Search</h3>
-              <p style={{ fontSize: '15px', lineHeight: 1.55, color: '#DDE4FD', margin: 0, maxWidth: '40ch' }}>Leadership and senior specialist hiring, ₹12L+ CTC. Mapped, scored, guaranteed.</p>
+              <div style={{ fontSize: '12px', fontWeight: 700, color: 'rgba(79,125,255,0.8)', letterSpacing: '.08em', textTransform: 'uppercase', marginBottom: '16px' }}>Primary service</div>
+              <h3 style={{ fontSize: 'clamp(22px,2.8vw,28px)', fontWeight: 800, margin: '0 0 10px', letterSpacing: '-.025em', color: '#fff' }}>Executive Search</h3>
+              <p style={{ fontSize: '15px', lineHeight: 1.55, color: 'rgba(255,255,255,0.55)', margin: 0, maxWidth: '40ch' }}>
+                Leadership and senior specialist hiring, ₹12L+ CTC. Mapped, scored, guaranteed.
+              </p>
             </div>
-            <a href="#" onClick={(e) => { e.preventDefault(); goService(); }} style={{ color: '#fff', fontWeight: 600, fontSize: '14.5px', textDecoration: 'none', marginTop: '24px', borderBottom: '1px solid rgba(255,255,255,.45)', paddingBottom: '2px', alignSelf: 'flex-start' }}>See how it works</a>
+            <a href="#" onClick={(e) => { e.preventDefault(); goService(); }}
+              style={{ color: '#8eb4ff', fontWeight: 600, fontSize: '14px', textDecoration: 'none', marginTop: '24px', borderBottom: '1px solid rgba(79,125,255,0.35)', paddingBottom: '2px', alignSelf: 'flex-start' }}>
+              See how it works →
+            </a>
           </motion.div>
-          <motion.div whileHover={{ y: -5, boxShadow: '0 12px 24px rgba(0,0,0,0.06)' }} style={{ background: 'transparent', border: '1px solid #E9EAED', borderRadius: '12px', padding: 'clamp(24px,4vw,36px)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+
+          {/* L&D card */}
+          <motion.div
+            className="glass-panel"
+            initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, amount: 0.1 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            whileHover={{ y: -6 }}
+            style={{ padding: 'clamp(24px,4vw,36px)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
+          >
             <div>
-              <div style={{ fontSize: '13px', fontWeight: 600, color: '#5F636B', marginBottom: '16px' }}>Also available</div>
-              <h3 style={{ fontSize: '19px', fontWeight: 800, margin: '0 0 10px', letterSpacing: '-.02em' }}>L&amp;D Solutions</h3>
-              <p style={{ fontSize: '14.5px', lineHeight: 1.55, color: '#4B4F58', margin: 0 }}>Leadership development for teams already in place.</p>
+              <div style={{ fontSize: '12px', fontWeight: 700, color: 'rgba(255,255,255,0.3)', letterSpacing: '.08em', textTransform: 'uppercase', marginBottom: '16px' }}>Also available</div>
+              <h3 style={{ fontSize: '19px', fontWeight: 800, margin: '0 0 10px', letterSpacing: '-.02em', color: '#fff' }}>L&amp;D Solutions</h3>
+              <p style={{ fontSize: '14.5px', lineHeight: 1.55, color: 'rgba(255,255,255,0.45)', margin: 0 }}>
+                Leadership development for teams already in place.
+              </p>
             </div>
-            <a href="#" onClick={(e) => { e.preventDefault(); startSearchLD(); }} style={{ color: '#2452F0', fontWeight: 600, fontSize: '14.5px', textDecoration: 'none', marginTop: '20px', borderBottom: '1px solid rgba(36,82,240,.35)', paddingBottom: '2px', alignSelf: 'flex-start' }}>Learn more</a>
+            <a href="#" onClick={(e) => { e.preventDefault(); startSearchLD(); }}
+              style={{ color: 'rgba(255,255,255,0.5)', fontWeight: 600, fontSize: '14px', textDecoration: 'none', marginTop: '20px', borderBottom: '1px solid rgba(255,255,255,0.15)', paddingBottom: '2px', alignSelf: 'flex-start' }}>
+              Learn more →
+            </a>
           </motion.div>
         </div>
       </section>
 
+      {/* ── Recent searches ──────────────────────────────────── */}
       <section style={{ padding: 'clamp(48px,7vw,80px) 0' }}>
-        <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.1 }} variants={fadeUp} style={{ fontWeight: 700, fontSize: 'clamp(24px,2.8vw,30px)', margin: '0 0 24px', padding: '0 clamp(20px,5vw,56px)', letterSpacing: '-.025em' }}>Recent searches</motion.h2>
-        <div style={{ display: 'flex', gap: '14px', padding: '0 clamp(20px,5vw,56px)', overflowX: 'auto' }}>
+        <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.1 }} variants={fadeUp}
+          style={{ fontWeight: 700, fontSize: 'clamp(24px,2.8vw,30px)', margin: '0 0 24px', padding: '0 clamp(20px,5vw,56px)', letterSpacing: '-.025em', color: '#fff' }}>
+          Recent searches
+        </motion.h2>
+        <div style={{ display: 'flex', gap: '14px', padding: '0 clamp(20px,5vw,56px) 8px', overflowX: 'auto', scrollbarWidth: 'none' }}>
           {caseStudies.map((cs, i) => (
-            <motion.div key={i} whileHover={{ scale: 1.02, boxShadow: '0 10px 20px rgba(0,0,0,0.05)' }} style={{ flex: 'none', width: '250px', border: '1px solid #E9EAED', borderRadius: '12px', padding: '22px', background: 'transparent' }}>
-              <div style={{ fontSize: '12.5px', fontWeight: 600, color: '#2452F0', marginBottom: '12px' }}>{cs.industry}</div>
-              <div style={{ fontSize: '17px', fontWeight: 700, marginBottom: '8px', letterSpacing: '-.015em' }}>{cs.role}</div>
-              <div style={{ display: 'flex', gap: '16px', fontSize: '13.5px', color: '#5F636B' }}>
+            <motion.div
+              key={i}
+              className="glass-panel"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.1 }}
+              transition={{ duration: 0.5, delay: i * 0.07 }}
+              whileHover={{ y: -5 }}
+              style={{ flex: 'none', width: '250px', padding: '22px' }}
+            >
+              <div style={{ fontSize: '12px', fontWeight: 700, color: '#8eb4ff', marginBottom: '12px', textTransform: 'uppercase', letterSpacing: '.06em' }}>{cs.industry}</div>
+              <div style={{ fontSize: '17px', fontWeight: 700, marginBottom: '10px', letterSpacing: '-.015em', color: '#fff' }}>{cs.role}</div>
+              <div style={{ display: 'flex', gap: '16px', fontSize: '13px', color: 'rgba(255,255,255,0.4)' }}>
                 <span>{cs.ctc}</span>
                 <span>{cs.time}</span>
               </div>
@@ -155,10 +299,25 @@ export default function Home({ startSearchExec, goService, startSearchLD, mockFi
         </div>
       </section>
 
-      <section style={{ padding: 'clamp(56px,8vw,96px) clamp(20px,5vw,56px)', textAlign: 'center', borderTop: '1px solid #E9EAED', background: 'transparent' }}>
-        <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.1 }} variants={fadeUp} style={{ fontWeight: 800, fontSize: 'clamp(26px,3.6vw,36px)', margin: '0 0 14px', letterSpacing: '-.03em', textWrap: 'balance' }}>Ready to fill your next senior role?</motion.h2>
-        <motion.p initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.1 }} variants={fadeUp} style={{ fontSize: '16px', color: '#4B4F58', margin: '0 0 28px' }}>Three minutes to a qualified intake.</motion.p>
-        <motion.button initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.1 }} variants={fadeUp} whileHover={{ scale: 1.03, boxShadow: '0 4px 14px rgba(36,82,240,0.4)' }} whileTap={{ scale: 0.97 }} onClick={startSearchExec} style={{ background: '#2452F0', color: '#fff', border: 'none', borderRadius: '6px', padding: '16px 32px', fontSize: '16px', fontWeight: 600, cursor: 'pointer', minHeight: '44px' }}>Start your search</motion.button>
+      {/* ── CTA Banner ───────────────────────────────────────── */}
+      <section style={{ padding: 'clamp(56px,8vw,96px) clamp(20px,5vw,56px)', textAlign: 'center', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+        <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.1 }} variants={fadeUp}
+          style={{ fontWeight: 800, fontSize: 'clamp(26px,3.6vw,38px)', margin: '0 0 14px', letterSpacing: '-.03em', textWrap: 'balance', color: '#fff' }}>
+          Ready to fill your next senior role?
+        </motion.h2>
+        <motion.p initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.1 }} variants={fadeUp}
+          style={{ fontSize: '16px', color: 'rgba(255,255,255,0.45)', margin: '0 0 32px' }}>
+          Three minutes to a qualified intake.
+        </motion.p>
+        <motion.button
+          className="neural-btn-primary"
+          initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.1 }} variants={fadeUp}
+          whileTap={{ scale: 0.97 }}
+          onClick={startSearchExec}
+          style={{ padding: '16px 36px', fontSize: '16px', minHeight: '48px' }}
+        >
+          Start your search
+        </motion.button>
       </section>
     </main>
   );

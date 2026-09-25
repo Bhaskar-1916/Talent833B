@@ -1,90 +1,71 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&display=swap');
 
+/* ─── Design Tokens ─────────────────────────────────────────── */
 :root {
-  --color-paper: #f2f0ec;
-  --color-ink: #0d0c0b;
+  --color-paper: #08080a;
+  --color-ink:   #f4f4f5;
+  --glass-bg:    rgba(14, 14, 18, 0.45);
+  --glass-border: rgba(255, 255, 255, 0.09);
+  --glass-blur:  24px;
+  --accent:      #4f7dff;
+  --accent-glow: rgba(79, 125, 255, 0.35);
 }
+
+/* ─── Reset & Base ──────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
 
 body {
   margin: 0;
-  background: transparent;
+  background: #08080a;
   font-family: 'Inter Tight', sans-serif;
   -webkit-font-smoothing: antialiased;
   color: var(--color-ink);
 }
-* {
-  box-sizing: border-box;
-}
+
 a {
   color: var(--color-ink);
-  transition: color 180ms cubic-bezier(.23,1,.32,1);
+  transition: opacity 180ms cubic-bezier(.23,1,.32,1);
 }
-a:hover {
-  opacity: 0.8;
-}
-::selection {
-  background: rgba(0,0,0,0.1);
-}
+a:hover { opacity: 0.7; }
+
+::selection { background: rgba(79,125,255,0.25); }
+
 input:focus, select:focus, button:focus, a:focus {
-  outline: 2px solid var(--color-ink);
+  outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 
+/* ─── Entrance Animations ───────────────────────────────────── */
 @keyframes riseIn {
-  from { opacity: 0; transform: translateY(12px) }
-  to { opacity: 1; transform: translateY(0) }
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
-.rise-in {
-  animation: riseIn 500ms cubic-bezier(0.23, 1, 0.32, 1) both;
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
 }
-.delay-1 { animation-delay: 60ms; }
-.delay-2 { animation-delay: 120ms; }
-.delay-3 { animation-delay: 180ms; }
-.delay-4 { animation-delay: 240ms; }
 
-/* Glassmorphism nav */
+.rise-in  { animation: riseIn 600ms cubic-bezier(0.23, 1, 0.32, 1) both; }
+.delay-1  { animation-delay:  80ms; }
+.delay-2  { animation-delay: 160ms; }
+.delay-3  { animation-delay: 240ms; }
+.delay-4  { animation-delay: 320ms; }
+
+/* ─── Navbar ────────────────────────────────────────────────── */
 nav {
   position: sticky;
   top: 0;
   z-index: 40;
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(233, 234, 237, 0.8);
+  background: rgba(8, 8, 10, 0.6);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border-bottom: 1px solid var(--glass-border);
 }
 
-/* Hover motions for buttons and cards */
-.btn {
-  transition: transform 160ms cubic-bezier(.23,1,.32,1), background 180ms cubic-bezier(.23,1,.32,1), box-shadow 180ms ease;
-}
-.btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(36, 82, 240, 0.15);
-}
-.btn:active {
-  transform: scale(0.97);
-}
-
-.card {
-  transition: transform 250ms ease, box-shadow 250ms ease;
-}
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(22, 24, 28, 0.08);
-}
-
-@media(prefers-reduced-motion:reduce){
-  *,*::before,*::after {
-    animation-duration: .01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: .01ms !important;
-  }
-}
-
+/* ─── Video Background ──────────────────────────────────────── */
 .video-background {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 0; left: 0;
   width: 100vw;
   height: 100vh;
   object-fit: cover;
@@ -92,32 +73,125 @@ nav {
   pointer-events: none;
 }
 
+/* Dark radial veil — lets edges sink to black, centre glows through */
 .video-veil {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 0; left: 0;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(to bottom, rgba(242,240,236,0.92) 0%, rgba(242,240,236,0.7) 40%, rgba(242,240,236,0.75) 100%);
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 40%, rgba(8,8,10,0.25) 0%, rgba(8,8,10,0.82) 100%),
+    linear-gradient(to bottom, rgba(8,8,10,0.5) 0%, rgba(8,8,10,0.15) 50%, rgba(8,8,10,0.75) 100%);
   z-index: -1;
   pointer-events: none;
 }
 
+/* Film-grain noise */
 .noise-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 0; left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 9999;
+  z-index: 1;
   pointer-events: none;
-  opacity: 0.6;
-  mix-blend-mode: multiply;
+  opacity: 0.04;
+  mix-blend-mode: overlay;
 }
 
+/* ─── Glass Panel ───────────────────────────────────────────── */
 .glass-panel {
-  background: rgba(242,240,236,0.65);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(13,12,11,0.08);
+  position: relative;
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.03) inset,
+    0 8px 32px rgba(0,0,0,0.55),
+    0 1px 0 rgba(255,255,255,0.07) inset;
+}
+
+/* Hairline top-edge highlight */
+.glass-panel::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 10%; right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+  pointer-events: none;
+}
+
+/* ─── Neural CTA Buttons ────────────────────────────────────── */
+.neural-btn-primary {
+  position: relative;
+  background: linear-gradient(135deg, rgba(79,125,255,0.22) 0%, rgba(79,125,255,0.08) 100%);
+  border: 1px solid rgba(79,125,255,0.45);
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 600;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 22px rgba(79,125,255,0.18), 0 1px 0 rgba(255,255,255,0.08) inset;
+  transition: transform 200ms cubic-bezier(.23,1,.32,1), box-shadow 200ms ease, background 200ms ease;
+  overflow: hidden;
+}
+.neural-btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.07) 50%, transparent 60%);
+  background-size: 200% 100%;
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+.neural-btn-primary:hover::before { opacity: 1; animation: shimmer 700ms ease forwards; }
+.neural-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 36px rgba(79,125,255,0.32), 0 1px 0 rgba(255,255,255,0.12) inset;
+  background: linear-gradient(135deg, rgba(79,125,255,0.3) 0%, rgba(79,125,255,0.14) 100%);
+}
+.neural-btn-primary:active { transform: scale(0.97) translateY(0); }
+
+.neural-btn-secondary {
+  position: relative;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.85);
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 600;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+  transition: transform 200ms cubic-bezier(.23,1,.32,1), box-shadow 200ms ease, background 200ms ease;
+}
+.neural-btn-secondary:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.09);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.35);
+  color: #fff;
+}
+.neural-btn-secondary:active { transform: scale(0.97) translateY(0); }
+
+/* ─── Utility card hover ────────────────────────────────────── */
+.card {
+  transition: transform 250ms ease, box-shadow 250ms ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.45);
+}
+
+/* ─── Reduced motion ────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
 }
